@@ -18,7 +18,7 @@
 
     <div class="w-full lg:w-[460px] relative">
       @if (status() === 'success') {
-        <!-- رسالة النجاح -->
+       
         <div @fadeSlide role="status" class="flex items-center gap-4 rounded-3xl bg-sage-ground px-5 py-5">
           <span @scaleSpring class="flex size-11 shrink-0 items-center justify-center rounded-full bg-sage text-white">
             <svg class="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -29,7 +29,7 @@
           </span>
         </div>
       } @else {
-        <!-- الفورم -->
+      
         <form @fadeSlide novalidate (submit)="onSubmit($event)" class="flex flex-col gap-3">
           <label class="text-sm font-bold text-[#f0f3ff]">
             اكتب بريدك، ويصلك الجديد أولًا بأول.

@@ -58,7 +58,6 @@ export class HomeProgramsComponent {
     if (next >= 0) {
       event.preventDefault();
       this.setDomain(this.tabs[next].value);
-      // To strictly follow keyboard accessibility, focus management can be added here
     }
   }
 }

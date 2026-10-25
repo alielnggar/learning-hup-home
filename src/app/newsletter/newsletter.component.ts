@@ -52,7 +52,7 @@ export class NewsletterComponent {
     this.status.set('loading');
     
     try {
-      // Simulate API Call
+      //  API Call
       await new Promise(resolve => setTimeout(resolve, 900));
       this.status.set('success');
     } catch {

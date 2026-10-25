@@ -1,4 +1,3 @@
-// src/app/sections/explore/illustrations.data.ts
 
 export type IllustrationLayer = {
   id: string;

@@ -42,7 +42,7 @@ export class StatsComponent implements OnInit, OnDestroy {
   }
 
   private animateCounters() {
-    const duration = 1400; // 1.4 seconds[cite: 15]
+    const duration = 1400; 
     const frameRate = 16;
     const totalFrames = Math.round(duration / frameRate);
 
@@ -64,7 +64,7 @@ export class StatsComponent implements OnInit, OnDestroy {
     }, frameRate);
   }
 
-  // Easing function to match [0.16, 1, 0.3, 1][cite: 15]
+  
   private easeOut(t: number): number {
     return 1 - Math.pow(1 - t, 3);
   }

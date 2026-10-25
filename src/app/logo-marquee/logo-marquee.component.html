@@ -6,7 +6,7 @@
   <div class="marquee relative mx-auto mt-5 flex h-[152px] max-w-[1280px] items-center overflow-hidden" aria-label="مؤسسات وثقت بـ DPC">
     <div class="marquee-track flex w-max animate-marquee">
       
-      <!-- الصف الأول -->
+     
       <ul class="flex shrink-0 items-center">
         @for (logo of logos; track $index) {
           <li class="flex h-[80px] w-[190px] shrink-0 items-center justify-center">
@@ -17,7 +17,7 @@
         }
       </ul>
 
-      <!-- الصف الثاني (نسخة مكررة لتأثير الدوران المستمر) -->
+    
       <ul aria-hidden="true" class="flex shrink-0 items-center">
         @for (logo of logos; track $index) {
           <li class="flex h-[80px] w-[190px] shrink-0 items-center justify-center">

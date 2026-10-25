@@ -1,7 +1,7 @@
 <section class="bg-[linear-gradient(180deg,#fff_0%,#f0f3ff_100%)] px-4 pt-[61px] pb-24 md:px-6 xl:px-20" dir="rtl">
   <div class="mx-auto max-w-[1280px]">
     
-    <!-- الهيدر الخاص بالقسم -->
+    
     <div class="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
       <div class="flex max-w-[760px] flex-col items-start gap-3">
         <span class="text-[13px] font-bold tracking-widest text-purple">المؤشرات</span>
@@ -18,10 +18,10 @@
       </a>
     </div>
 
-    <!-- المحتوى -->
+    
     <div class="grid gap-6 lg:grid-cols-[minmax(0,664px)_minmax(0,592px)]">
       
-      <!-- الكارت المميز الكبير -->
+      
       <div class="flex flex-col rounded-[32px] bg-[linear-gradient(143deg,#2b2468_14%,#211951_86%)] p-6 text-white md:p-9 lg:h-[506px]">
         <span class="self-start rounded-full bg-purple px-3 py-[5px] text-[13px]">إصدار 2026 · الأحدث</span>
         <h3 class="mt-5 text-[27px] leading-[1.35] font-bold md:text-[32px]">مؤشر قيمة المنتج الرقمي</h3>
@@ -48,7 +48,7 @@
             }
           </div>
           
-          <!-- العداد الدائري -->
+         
           <div class="relative h-[140px] w-[220px] shrink-0 text-center">
             <img src="/figma/home-v2/gauge-empty.svg" alt="" class="absolute inset-x-0 top-[10px] w-full" />
             <div class="absolute inset-x-0 top-[10px] transition-all duration-[1200ms] ease-out"
@@ -65,7 +65,7 @@
         </a>
       </div>
 
-      <!-- الكروت الجانبية الصغيرة -->
+    
       <div class="flex flex-col gap-4">
         @for (card of cards; track card.title) {
           <a [routerLink]="card.href" class="group flex h-[150px] items-center justify-between gap-5 rounded-3xl border border-neutral-line bg-white px-6 py-[22px] transition-colors duration-300 ease-out hover:border-transparent hover:bg-[#fcfcff] hover:shadow-sm">

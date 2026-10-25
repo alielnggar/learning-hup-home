@@ -8,15 +8,15 @@ import { FooterComponent } from './layout/footer/footer.component';
   standalone: true,
   imports: [RouterModule, HeaderComponent, FooterComponent],
   template: `
-    <!-- الهيدر ثابت فوق -->
+   
     <app-header></app-header>
 
-    <!-- هنا هيتغير المحتوى حسب الراوت (هوم، بحث، برامج) -->
+    
     <main>
       <router-outlet></router-outlet>
     </main>
 
-    <!-- الفوتر ثابت تحت -->
+   
     <app-footer></app-footer>
   `
 })

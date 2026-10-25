@@ -2,13 +2,13 @@
   class="relative isolate flex min-h-[700px] flex-col items-center px-4 pt-[180px] pb-10 md:px-6 lg:h-[820px] lg:pt-[247px] lg:pb-0 "
   dir="rtl"
 >
-  <!-- الخلفية (Hero Background) -->
+  
   <div
     aria-hidden="true"
     class="pointer-events-none absolute inset-0 -z-10 overflow-hidden bg-[#f4f2fb]"
   >
     <div class="absolute top-0 left-1/2 h-[820px] w-[1440px] -translate-x-1/2">
-      <!-- Gradient Blobs -->
+    
       <div class="absolute inset-[-34.15%_-18.06%_0_-20.83%]">
         <img
           src="/figma/hero-bg.svg"
@@ -17,7 +17,7 @@
         />
       </div>
 
-      <!-- Faint Grid -->
+      
       <div class="absolute inset-x-0 top-0 h-[756px] overflow-hidden opacity-[0.02]">
         <img
           src="/figma/grid-verti.svg"
@@ -26,7 +26,7 @@
         />
       </div>
 
-      <!-- Skewed Glass Panes -->
+     
       <div class="absolute inset-0">
         <div
           *ngFor="let p of panes; let i = index"
@@ -53,7 +53,7 @@
     ></div>
   </div>
 
-  <!-- المحتوى الرئيسي -->
+  
   <div class="flex max-w-[680px] flex-col items-center gap-6 text-center animate-fade-in-up">
     <div
       class="rounded-full border border-white/90 bg-white/60 px-3.5 py-1.5 text-sm font-medium text-purple"
@@ -64,7 +64,7 @@
     <h1 class="text-[34px] leading-[1.2] font-bold text-navy sm:text-[44px] lg:text-[56px]">
       <span class="sr-only">منظومة متكاملة من المعرفة والبحث والنشر والأدوات والتعلّم</span>
       <span aria-hidden="true" class="inline-flex flex-wrap items-end justify-center gap-x-3">
-        <!-- الكلمة المتغيرة -->
+       <span>منظومة متكاملة من</span>
         <span class="relative inline-grid overflow-hidden py-[0.08em] align-bottom text-violet-ink">
           <span
             *ngFor="let w of words"
@@ -78,7 +78,7 @@
             {{ words[currentWordIndex()] }}
           </span>
         </span>
-        <span>منظومة متكاملة من</span>
+        
       </span>
     </h1>
 

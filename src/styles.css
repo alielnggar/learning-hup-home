@@ -1,51 +1,47 @@
 @import "tailwindcss";
 
 body, html {
-  font-family: "Thmanyah Serif Text", sans-serif !important;
+  font-family: "thmanyahsans", sans-serif !important;
 }
 
-/* ------------------------------------------------------------------
-   Thmanyah — drop the font files into /public/fonts (see README).
-   Until they exist the browser silently falls back to IBM Plex Sans Arabic.
-------------------------------------------------------------------- */
+
 @font-face {
-  font-family: "Thmanyah Serif Text";
+  font-family: "thmanyahserif";
   src: url("/assets/fonts/thmanyahserif-Regular.otf") format("opentype");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: "Thmanyah Serif Text";
+  font-family: "thmanyahserif";
   src: url("/assets/fonts/thmanyahserif-Medium.otf") format("opentype");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
-  font-family: "Thmanyah Serif Text";
+  font-family: "thmanyahserif";
   src: url("/assets/fonts/thmanyahserif-Bold.otf") format("opentype");
   font-weight: 700;
   font-display: swap;
 }
 @font-face {
-  font-family: "Thmanyah Sans";
+  font-family: "thmanyahsans";
   src: url("/assets/fonts/thmanyahsans-Regular.otf") format("opentype");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: "Thmanyah Sans";
+  font-family: "thmanyahsans";
   src: url("/assets/fonts/thmanyahsans-Medium.otf") format("opentype");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
-  font-family: "Thmanyah Sans";
+  font-family: "thmanyahsans";
   src: url("/assets/fonts/thmanyahsans-Bold.otf") format("opentype");
   font-weight: 700;
   font-display: swap;
 }
 
-/* Figma variables (Learning-Hub file) */
 :root {
   --navy: #211951;
   --purple: #746dc6;
@@ -109,14 +105,12 @@ body, html {
   --color-hover-row: #f5edfc;
   --color-hover-title: #736ec7;
 
-  /* Figma: --font-sans and --font-serif both resolve to Thmanyah Serif Text */
-  --font-sans: "Thmanyah Serif Text", "Thmanyah Sans", var(--font-plex-arabic), var(--font-plex-sans), system-ui, sans-serif;
-  --font-serif: "Thmanyah Serif Text", var(--font-plex-arabic), var(--font-plex-sans), serif;
-  /* The whole design is set in Thmanyah; Plex stays only as a fallback while it loads. */
-  --font-plex: "Thmanyah Serif Text", var(--font-plex-arabic), var(--font-plex-sans), system-ui, sans-serif;
-  --font-latin: "Thmanyah Serif Text", var(--font-plex-sans), var(--font-plex-arabic), system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
-
+  
+  --font-sans: "thmanyahsans", "thmanyahserif", system-ui, sans-serif;
+  --font-serif: "thmanyahserif", serif;
+  --font-plex: "thmanyahsans", system-ui, sans-serif;
+  --font-latin: "thmanyahsans", system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
   --radius-card: 28px;
   --radius-inner: 20px;
   --radius-icon: 14px;

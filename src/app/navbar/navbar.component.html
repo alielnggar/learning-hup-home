@@ -1,7 +1,7 @@
 <nav aria-label="القائمة الرئيسية" class="hidden lg:block" dir="rtl" >
   <ul class="flex items-center gap-[2px]">
     @for (item of navItems; track item.label) {
-      <!-- عنصر عادي -->
+      
       @if (!item.menu) {
         <li>
           <a
@@ -14,7 +14,7 @@
         </li>
       }
 
-      <!-- قائمة منسدلة (Dropdown) -->
+    
       @if (item.menu) {
         <li class="relative" (mouseenter)="openMenu.set(item.menu)" (mouseleave)="closeMenu()">
           <button
@@ -40,7 +40,7 @@
             </svg>
           </button>
 
-          <!-- نافذة القائمة -->
+          
           @if (openMenu() === item.menu) {
             <div
               class="absolute top-full right-1/2 z-10 translate-x-1/2 pt-3 transition-opacity duration-200"

@@ -28,7 +28,7 @@ export class FloatingCtaComponent {
     const scrollY = window.scrollY || document.documentElement.scrollTop;
     const end = document.documentElement.scrollHeight - window.innerHeight;
     
-    // يظهر بعد 640 بكسل ويختفي قبل النهاية بـ 900 بكسل
+    
     if (scrollY > 640 && scrollY < end - 900) {
       this.isVisible.set(true);
     } else {
