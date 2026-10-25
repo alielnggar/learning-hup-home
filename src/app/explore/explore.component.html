@@ -1,0 +1,44 @@
+<section class="mx-auto max-w-[1200px] px-4 pt-10 pb-10 md:px-6 xl:px-0" dir="rtl">
+  
+  <!-- عنوان القسم -->
+  <div class="mb-12 flex flex-col items-center gap-[19px] text-center lg:mb-16">
+    <span class="text-[13px] font-bold tracking-widest text-purple">استكشف مركز البحث العلمي</span>
+    <h2 class="text-[32px] leading-[1.3] font-bold text-navy md:text-[44px]">
+      ماذا ستجد <span class="relative inline-block z-10 px-1 after:absolute after:-bottom-1 after:left-0 after:-z-10 after:h-3.5 after:w-full after:rounded-sm after:bg-purple-100">داخل الـ Hub؟</span>
+    </h2>
+  </div>
+
+  <!-- شبكة الكروت -->
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    @for (card of cards; track card.illustration) {
+      <a href="#" 
+         [style.backgroundImage]="card.bg"
+         (mouseenter)="hoveredCard.set(card.illustration)"
+         (mouseleave)="hoveredCard.set(null)"
+         class="group relative flex h-[430px] flex-col items-start gap-2.5 overflow-hidden rounded-[28px] px-[30px] pt-[30px] shadow-[0_18px_36px_-6px_rgba(33,25,81,0)] transition-shadow duration-300 hover:shadow-[0_18px_36px_-6px_rgba(33,25,81,0.12)] focus-visible:outline-offset-4">
+        
+        <span class="pb-3">
+          <span class="inline-block rounded-full bg-white px-3 py-[5px] text-xs font-bold" [class]="card.tagColor">{{ card.tag }}</span>
+        </span>
+        
+        <h3 class="text-[27px] leading-[1.35] font-bold text-navy">{{ card.title }}</h3>
+        
+        <p class="text-[15px] leading-[1.75] text-neutral-text">{{ card.body }}</p>
+        
+        <span class="flex items-center gap-2 text-sm font-bold text-navy mt-1">
+          {{ card.cta }}
+          <span class="transition-transform duration-300 group-hover:-translate-x-1">←</span>
+        </span>
+        
+        <div class="absolute top-[240px] left-[2px] w-[calc(100%-4px)] max-w-[380px] transition-transform duration-300 group-hover:-translate-y-2.5">
+          <!-- مكون الرسوم المتحركة الجديد -->
+          <app-animated-illustration 
+            [name]="card.illustration" 
+            [isHovered]="hoveredCard() === card.illustration">
+          </app-animated-illustration>
+        </div>
+        
+      </a>
+    }
+  </div>
+</section>

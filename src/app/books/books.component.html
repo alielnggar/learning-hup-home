@@ -1,0 +1,43 @@
+<section class="mx-auto flex max-w-[1280px] flex-col gap-11 px-4 py-[54px] md:px-6 xl:px-0" dir="rtl">
+  
+  <div class="flex items-center justify-between gap-4">
+    <h3 class="text-[34px] font-bold text-navy md:text-[48px]">أحدث الكتب</h3>
+    <app-button href="/books" variant="outline" [arrow]="true" className="font-bold">
+      كل الكتب
+    </app-button>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-3">
+    @for (book of books; track book.image) {
+      <a routerLink="/books" class="group overflow-hidden rounded-[28px] border border-neutral-line bg-white transition-[box-shadow,transform] duration-300 ease-soft hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(33,26,82,0.12)] focus-visible:-translate-y-1 focus-visible:shadow-[0_18px_36px_rgba(33,26,82,0.12)]">
+        
+        <div class="flex h-[322px] items-start justify-center overflow-hidden bg-[#f4eefd] pt-8">
+          <span class="relative h-[300px] overflow-hidden rounded-[6px] shadow-[0_18px_36px_rgba(33,25,81,0.22)] transition-transform duration-500 ease-soft group-hover:-translate-y-2 group-hover:rotate-[-2deg]" [class]="book.frame">
+            <img [src]="'/figma/home-v2/' + book.image" alt=""
+                 class="absolute max-w-none"
+                 [style.width]="book.crop.width" [style.height]="book.crop.height"
+                 [style.left]="book.crop.left" [style.top]="book.crop.top" />
+          </span>
+        </div>
+        
+        <div class="flex min-h-[174px] flex-col px-6 pt-[22px] pb-6">
+          <h4 class="text-[21px] leading-[1.5] font-bold text-navy transition-colors duration-300 group-hover:text-purple-600">
+            {{ book.title }}
+          </h4>
+          <p dir="ltr" class="text-right font-latin text-[13.5px] text-[#6e6a8c]">
+            {{ book.en }}
+          </p>
+          <div class="mt-auto flex items-center justify-between border-t border-neutral-line pt-4 text-sm">
+            <span class="flex items-center gap-2 text-neutral-text">
+              <span class="size-[7px] rounded-full" [style.backgroundColor]="book.dot"></span>
+              {{ book.date }}
+            </span>
+            <span class="rounded-full bg-neutral-ground px-3 py-1 text-[#6e6a8c]">
+              قريبًا
+            </span>
+          </div>
+        </div>
+      </a>
+    }
+  </div>
+</section>

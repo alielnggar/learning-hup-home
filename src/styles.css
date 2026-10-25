@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+body, html {
+  font-family: "Thmanyah Serif Text", sans-serif !important;
+}
+
+/* ------------------------------------------------------------------
+   Thmanyah — drop the font files into /public/fonts (see README).
+   Until they exist the browser silently falls back to IBM Plex Sans Arabic.
+------------------------------------------------------------------- */
+@font-face {
+  font-family: "Thmanyah Serif Text";
+  src: url("/assets/fonts/thmanyahserif-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Serif Text";
+  src: url("/assets/fonts/thmanyahserif-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Serif Text";
+  src: url("/assets/fonts/thmanyahserif-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("/assets/fonts/thmanyahsans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("/assets/fonts/thmanyahsans-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("/assets/fonts/thmanyahsans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Figma variables (Learning-Hub file) */
+:root {
+  --navy: #211951;
+  --purple: #746dc6;
+  --purple-100: #e4e2f6;
+  --purple-600: #5a52b5;
+  --violet: #ad7be9;
+  --violet-100: #efe4fb;
+  --violet-200: #dcc6f6;
+  --sky: #82c3ec;
+  --sky-100: #dff0fa;
+  --sky-200: #bfe1f6;
+  --sage: #8aa873;
+  --sage-100: #e6eedf;
+  --sage-200: #cfddc3;
+  --white: #ffffff;
+
+  /* "ed-*" editorial neutrals + grounds/inks */
+  --ed-ground: #f7f6fc;
+  --ed-line: #e6e3f2;
+  --ed-border: #dcd8ec;
+  --ed-text: #4a4566;
+  --ed-arrow: #9a95b8;
+  --ed-highlight: #e4dbfa;
+  --ed-violet-ground: #f4eefd;
+  --ed-violet-ink: #7a45b8;
+  --ed-sky-ground: #eef2fa;
+  --ed-sky-ink: #2f6f96;
+  --ed-sage-ground: #eef5e8;
+  --ed-sage-ink: #4f7a3a;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-purple: var(--purple);
+  --color-purple-100: var(--purple-100);
+  --color-purple-600: var(--purple-600);
+  --color-violet: var(--violet);
+  --color-violet-100: var(--violet-100);
+  --color-violet-200: var(--violet-200);
+  --color-violet-ground: var(--ed-violet-ground);
+  --color-violet-ink: var(--ed-violet-ink);
+  --color-sky: var(--sky);
+  --color-sky-100: var(--sky-100);
+  --color-sky-200: var(--sky-200);
+  --color-sky-ground: var(--ed-sky-ground);
+  --color-sky-ink: var(--ed-sky-ink);
+  --color-sage: var(--sage);
+  --color-sage-100: var(--sage-100);
+  --color-sage-200: var(--sage-200);
+  --color-sage-ground: var(--ed-sage-ground);
+  --color-sage-ink: var(--ed-sage-ink);
+
+  --color-neutral-ground: var(--ed-ground);
+  --color-neutral-line: var(--ed-line);
+  --color-neutral-border: var(--ed-border);
+  --color-neutral-text: var(--ed-text);
+  --color-neutral-arrow: var(--ed-arrow);
+  --color-accent-highlight: var(--ed-highlight);
+  --color-hover-row: #f5edfc;
+  --color-hover-title: #736ec7;
+
+  /* Figma: --font-sans and --font-serif both resolve to Thmanyah Serif Text */
+  --font-sans: "Thmanyah Serif Text", "Thmanyah Sans", var(--font-plex-arabic), var(--font-plex-sans), system-ui, sans-serif;
+  --font-serif: "Thmanyah Serif Text", var(--font-plex-arabic), var(--font-plex-sans), serif;
+  /* The whole design is set in Thmanyah; Plex stays only as a fallback while it loads. */
+  --font-plex: "Thmanyah Serif Text", var(--font-plex-arabic), var(--font-plex-sans), system-ui, sans-serif;
+  --font-latin: "Thmanyah Serif Text", var(--font-plex-sans), var(--font-plex-arabic), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --radius-card: 28px;
+  --radius-inner: 20px;
+  --radius-icon: 14px;
+
+  --ease-soft: var(--ease-out-soft);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  color: var(--navy);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+:focus-visible {
+  outline: 2px solid var(--purple-600);
+  outline-offset: 3px;
+}
+
+/* Infinite logo marquee (pauses on hover) */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(50%); } 
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Slow glass/blob drift in the hero and CTA */
+@keyframes drift-a {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(18px, 14px, 0); }
+}
+@keyframes drift-b {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-16px, 10px, 0); }
+}
+@keyframes drift-c {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(10px, -12px, 0); }
+}
+.drift-a { animation: drift-a 16s ease-in-out infinite; }
+.drift-b { animation: drift-b 20s ease-in-out infinite; }
+.drift-c { animation: drift-c 13s ease-in-out infinite; }
+
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Light sweep across the floating CTA bar: one pass, then a long rest */
+@keyframes shimmer {
+  0% { transform: translateX(-120%) skewX(-20deg); }
+  30%, 100% { transform: translateX(520%) skewX(-20deg); }
+}
+.shimmer { animation: shimmer 4.5s ease-in-out 0.6s infinite; }
+
+/* Short attention shake on the floating CTA button, then a long rest */
+@keyframes nudge {
+  0%, 82%, 100% { transform: rotate(0) scale(1); }
+  85% { transform: rotate(-4deg) scale(1.06); }
+  88% { transform: rotate(4deg) scale(1.06); }
+  91% { transform: rotate(-3deg) scale(1.04); }
+  94% { transform: rotate(2deg) scale(1.02); }
+}
+.nudge { animation: nudge 5s ease-in-out 1.5s infinite; }
+.nudge:hover { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .shimmer,
+  .nudge,
+  .marquee-track,
+  .drift-a,
+  .drift-b,
+  .drift-c,
+  .animate-gradient {
+    animation: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

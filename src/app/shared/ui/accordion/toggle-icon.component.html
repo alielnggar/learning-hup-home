@@ -1,0 +1,23 @@
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterModule, HeaderComponent, FooterComponent],
+  template: `
+    <!-- الهيدر ثابت فوق -->
+    <app-header></app-header>
+
+    <!-- هنا هيتغير المحتوى حسب الراوت (هوم، بحث، برامج) -->
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- الفوتر ثابت تحت -->
+    <app-footer></app-footer>
+  `
+})
+export class AppComponent {}
