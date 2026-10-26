@@ -1,16 +1,22 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
+import AOS from 'aos';
 import { HeaderComponent } from './header/header.component';
-import { HeroComponent } from './hero/hero.component';
-
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, HeaderComponent, HeroComponent],
+  imports: [RouterOutlet , HeaderComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('lerning-hub');
+  ngOnInit() {
+    
+    AOS.init({
+      once: true, 
+      duration: 800, 
+      offset: 100, 
+    });
+  }
 }
