@@ -1,0 +1,196 @@
+<section
+  class="flex w-full flex-col items-center justify-start gap-12 overflow-hidden bg-white px-4 py-16 md:px-10 lg:px-20 lg:py-24"
+  dir="rtl"
+>
+  
+  <div
+    class="relative flex flex-col items-center justify-start gap-4 text-center"
+    data-aos="fade-up"
+  >
+   
+    <div class="w-[650px] h-16 -left-6 top-12 absolute bg-[#FAF2E2] rounded-xl"></div>
+
+   
+    <div
+      class="relative z-10 inline-flex items-center justify-start overflow-hidden rounded-full bg-violet-100 px-4 py-1.5"
+    >
+      <span class="text-xs font-bold text-purple-600">المشكلة</span>
+    </div>
+
+    <h2 class="relative z-10 text-3xl font-bold leading-tight text-navy md:text-5xl lg:text-[52px]">
+      المشكلة ليست أنّك غير متميّز.
+    </h2>
+
+    <p
+      class="relative z-10 max-w-[760px] text-base font-normal leading-9 text-neutral-text md:text-lg"
+    >
+      المشكلة أنّ معرفتك متفرّقة، ولا تعرف كيف تربط النقاط ببعضها.
+    </p>
+  </div>
+
+ 
+  <div class="flex w-full max-w-[1200px]  flex-col items-stretch justify-center gap-10 lg:flex-row">
+   
+    <div class="flex flex-1 flex-col items-stretch justify-start gap-3">
+      @for (problem of problems(); track problem; let i = $index) {
+        <div
+          data-aos="fade-up"
+          [attr.data-aos-delay]="i * 100"
+          class="inline-flex items-center justify-start gap-3 rounded-xl bg-white px-4 py-3.5 outline outline-1 -outline-offset-1 outline-neutral-line transition-colors hover:bg-neutral-ground"
+        >
+          <div
+            class="flex size-5 shrink-0 items-center justify-center rounded-full bg-neutral-ground"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="11"
+              height="11"
+              viewBox="0 0 11 11"
+              fill="none"
+            >
+              <path
+                d="M8.25 2.75L5.5 5.5M5.5 5.5L2.75 8.25M5.5 5.5L2.75 2.75M5.5 5.5L8.25 8.25"
+                stroke-width="1.19167"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke="#6E6A8C"
+              />
+            </svg>
+          </div>
+          <span class="text-sm font-medium leading-6 text-navy md:text-base">{{ problem }}</span>
+        </div>
+      }
+    </div>
+
+   
+
+    <div
+      data-aos="fade-left"
+      class="relative isolate flex w-full flex-1 aspect-square md:aspect-[4/3] lg:aspect-auto lg:h-[470xp] items-center justify-center overflow-hidden rounded-[32px] bg-gradient-to-br from-white via-[#F8F5FF] to-[#E8F3FC] outline outline-1 -outline-offset-1 outline-neutral-line"
+    >
+    
+      <div
+        class="absolute left-5 top-5 z-20 inline-flex items-center gap-2 rounded-full border border-[#D9CFF2] bg-white/90 px-4 py-2.5 text-[#4A4566] backdrop-blur-sm"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+          viewBox="0 0 15 15"
+          fill="none"
+        >
+          <path
+            d="M6.25 8.125C6.52041 8.47803 6.86305 8.76928 7.25502 8.97929C7.647 9.1893 8.07928 9.31324 8.52298 9.34282C8.96669 9.3724 9.41159 9.30694 9.82798 9.15082C10.2444 8.9947 10.6226 8.75151 10.9375 8.4375L12.8125 6.5625C13.2638 5.96072 13.483 5.21632 13.4296 4.46598C13.3763 3.71563 13.0541 3.00971 12.5222 2.4778C11.9903 1.94589 11.2844 1.62369 10.534 1.57037C9.78369 1.51704 9.03929 1.73616 8.4375 2.1875L7.375 3.25M8.75 6.875C8.4796 6.52198 8.13696 6.23073 7.74498 6.02072C7.35301 5.81071 6.92073 5.68677 6.47703 5.65719C6.03332 5.62761 5.58841 5.69307 5.17203 5.84919C4.75565 6.00531 4.37738 6.2485 4.0625 6.5625L2.1875 8.4375C1.73616 9.03929 1.51704 9.78369 1.57037 10.534C1.62369 11.2844 1.94589 11.9903 2.4778 12.5222C3.00971 12.794 3.71563 13.4296 4.46598 13.4296C5.21632 13.4296 5.96072 12.8125 6.5625 12.8125L7.625 11.75"
+            stroke="#4A4566"
+            stroke-width="1.25"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span class="text-xs font-bold">بلا إطار يربطها</span>
+      </div>
+
+   
+      <div
+        class="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[76%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#D9D0F3]"
+      ></div>
+
+     
+      <svg
+        class="pointer-events-none absolute inset-0 z-0 h-full w-full"
+        viewBox="0 0 700 580"
+        preserveAspectRatio="none"
+        fill="none"
+        aria-hidden="true"
+      >
+        <g stroke="#C9C0E8" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 7">
+          <path d="M350 290 L350 125" />
+          <path d="M350 290 L145 200" />
+          <path d="M350 290 L555 200" />
+          <path d="M350 290 L135 390" />
+          <path d="M350 290 L565 390" />
+          <path d="M350 290 L350 455" />
+        </g>
+      </svg>
+
+  
+      <div
+        class="relative z-10 flex size-28 md:size-36 shrink-0 flex-col items-center justify-center gap-1 rounded-full border-2 border-dashed border-[#7868D9] bg-white/95 text-[#7868D9]"
+      >
+        <span class="text-4xl font-bold md:text-5xl">؟</span>
+        <span class="text-xs font-bold md:text-sm">الإطار الرابط</span>
+      </div>
+
+  
+      <div
+        class="absolute left-1/2 top-[15%] z-20 -translate-x-1/2 inline-flex items-center gap-2 rounded-xl border border-dashed border-[#D9D0F3] bg-white px-4 py-3 shadow-[0_8px_20px_rgba(70,55,120,0.07)] md:px-5"
+      >
+        <span class="text-sm font-medium text-[#5F5A7C] md:text-base">Requirements</span>
+        <span class="size-2 rounded-full bg-[#C9C0E8]"></span>
+      </div>
+
+    
+      <div
+        class="absolute left-[9%] top-[28%] z-20 inline-flex items-center gap-2 rounded-xl border border-dashed border-[#D9D0F3] bg-white px-3 py-3 shadow-[0_8px_20px_rgba(70,55,120,0.07)] md:left-[9.5%] md:px-5"
+      >
+        <span class="text-sm font-medium text-[#5F5A7C] md:text-base">Agile</span>
+        <span class="size-2 rounded-full bg-[#C9C0E8]"></span>
+      </div>
+
+      <div
+        class="absolute right-[10%] top-[28%] z-20 inline-flex items-center gap-2 rounded-xl border border-dashed border-[#D9D0F3] bg-white px-3 py-3 shadow-[0_8px_20px_rgba(70,55,120,0.07)] md:right-[10%] md:px-5"
+      >
+        <span class="text-sm font-medium text-[#5F5A7C] md:text-base">UX</span>
+        <span class="size-2 rounded-full bg-[#C9C0E8]"></span>
+      </div>
+
+     
+      <div
+        class="absolute left-[8%] top-[65%] z-20 inline-flex items-center gap-2 rounded-xl border border-dashed border-[#D9D0F3] bg-white px-3 py-3 shadow-[0_8px_20px_rgba(70,55,120,0.07)] md:left-[8%] md:px-5"
+      >
+        <span class="text-sm font-medium text-[#5F5A7C] md:text-base">Metrics</span>
+        <span class="size-2 rounded-full bg-[#C9C0E8]"></span>
+      </div>
+
+   
+      <div
+        class="absolute right-[8%] top-[65%] z-20 inline-flex items-center gap-2 rounded-xl border border-dashed border-[#D9D0F3] bg-white px-3 py-3 shadow-[0_8px_20px_rgba(70,55,120,0.07)] md:right-[8%] md:px-5"
+      >
+        <span class="text-sm font-medium text-[#5F5A7C] md:text-base">Delivery</span>
+        <span class="size-2 rounded-full bg-[#C9C0E8]"></span>
+      </div>
+
+     
+      <div
+        class="absolute left-1/2 top-[82%] z-20 -translate-x-1/2 inline-flex items-center gap-2 rounded-xl border border-dashed border-[#D9D0F3] bg-white px-4 py-3 shadow-[0_8px_20px_rgba(70,55,120,0.07)] md:px-5"
+      >
+        <span class="text-sm font-medium text-[#5F5A7C] md:text-base">Stakeholders</span>
+        <span class="size-2 rounded-full bg-[#C9C0E8]"></span>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div
+    data-aos="zoom-in"
+    data-aos-delay="400"
+    class="inline-flex items-center justify-start gap-2.5 overflow-hidden rounded-full bg-violet-50 px-6 py-3.5 outline outline-1 -outline-offset-1 outline-violet-100"
+  >
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="text-purple-600"
+    >
+      <path d="M20 6L9 17l-5-5" />
+    </svg>
+    <span class="text-sm font-bold text-purple-600 md:text-base">
+      إذا مررت بواحدةٍ أو أكثر من هذه التحديات، فاطمئنّ — نقدّم لك المسار العملي الواضح.
+    </span>
+  </div>
+</section>

@@ -1,0 +1,239 @@
+<section
+  class="flex w-full flex-col items-center justify-start gap-12 overflow-hidden bg-white px-4 py-16 md:px-10 lg:gap-16 lg:px-20 lg:py-24"
+  dir="rtl"
+>
+  <div class="flex flex-col items-center justify-start gap-4 text-center" data-aos="fade-up">
+    <div
+      class="inline-flex items-center justify-start overflow-hidden rounded-full bg-violet-100 px-4 py-1.5 shadow-sm"
+    >
+      <span class="text-xs font-bold text-purple-600">القرار</span>
+    </div>
+
+    <h2
+      class="max-w-[900px] text-3xl font-bold leading-tight text-navy md:text-4xl lg:text-5xl lg:leading-[60px]"
+    >
+      بما أنّك وصلت إلى هذا القسم،<br class="hidden md:block" />فأمامك الآن طريقان
+    </h2>
+  </div>
+
+  <div class="grid w-full max-w-[1200px] grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+    <div
+      data-aos="fade-left"
+      class="flex flex-col items-start justify-start gap-5 rounded-3xl bg-[#F5F3F9] p-6 outline outline-1 -outline-offset-1 outline-neutral-border md:p-9"
+    >
+      <div
+        class="inline-flex items-center justify-start rounded-full bg-white px-4 py-1.5 shadow-sm"
+      >
+        <span class="text-xs font-bold text-neutral-arrow">الطريق الأول</span>
+      </div>
+
+      <h3 class="text-xl font-bold leading-9 text-neutral-arrow md:text-2xl lg:leading-10">
+        أن تستمرّ كما أنت، وتغلق الصفحة، ولا تتّخذ أيّ قرار
+      </h3>
+
+      <div class="mt-2 flex flex-col items-start justify-start gap-4">
+        @for (point of pathOnePoints(); track point) {
+          <div class="flex items-start justify-start gap-3">
+            <div
+              class="flex size-5 mt-1 shrink-0 items-center justify-center rounded-full bg-neutral-line"
+            >
+              <div class="size-2 rounded-sm border-[1.5px] border-neutral-text"></div>
+            </div>
+            <span class="text-base font-normal leading-7 text-neutral-text">{{ point }}</span>
+          </div>
+        }
+      </div>
+
+      <p class="mt-4 text-base font-bold leading-7 text-neutral-text">
+        وهذا اختيارٌ مفهوم — أعرف أنّ العمل يأخذ وقتًا، والتعلّم يحتاج إلى مجهود، وهذه النقلة تحتاج
+        إلى قرار.
+      </p>
+    </div>
+
+    <div
+      data-aos="fade-right"
+      data-aos-delay="150"
+      class="relative flex flex-col items-start justify-start gap-5 overflow-visible rounded-3xl bg-gradient-to-br from-violet-50 via-violet-100 to-sky-100 p-6 outline outline-1 -outline-offset-1 outline-violet-200 md:p-9"
+    >
+      <div
+        class="absolute left-1/2 -top-4 z-10 inline-flex -translate-x-1/2 items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-r from-sky-200 via-sky-100 to-white px-4 py-3"
+      >
+        <div
+          class="text-right text-sm font-bold leading-4 text-slate-900 font-['thmanyah_serif_text']"
+        >
+          تكلفة الاستثمار فيه لا تُقارن بحجم العائد الذي يمكن أن يعود عليك منه
+        </div>
+      </div>
+
+      <div
+        class="inline-flex items-center justify-start rounded-full bg-white px-4 py-1.5 shadow-sm mt-2"
+      >
+        <span class="text-xs font-bold text-purple-600">الطريق الثاني</span>
+      </div>
+
+      <h3 class="text-xl font-bold leading-9 text-navy md:text-2xl lg:leading-10">
+        أن تبدأ معنا الآن، وتبني طريقة تفكير Product Manager حقيقي
+      </h3>
+
+      <p class="text-base font-normal leading-7 text-neutral-text">
+        تصبح الشخص الذي لا يسأل فقط «ماذا سنفعل؟» بل يسأل :
+        <strong class="text-navy font-bold"
+          >«لماذا سنفعله؟ ولمن؟ ولماذا الآن؟ وكيف سنعرف أنه نجح؟»</strong
+        >
+      </p>
+
+      <div class="mt-2 flex flex-col items-start justify-start gap-4 pl-4 md:pl-8 lg:pl-16">
+        @for (point of pathTwoPoints(); track point) {
+          <div class="flex items-start justify-start gap-3">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-purple-600 shrink-0 mt-1"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="text-base font-normal leading-7 text-neutral-text">{{ point }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div
+    data-aos="zoom-in"
+    data-aos-delay="300"
+    class="relative flex w-full max-w-[1200px] flex-col items-center justify-start gap-8 overflow-hidden rounded-[32px] from-violet-50 via-violet-100 to-sky-100 px-6 py-12 md:px-12 md:py-16"
+  >
+    <div
+      class="pointer-events-none absolute -left-[200px] -top-[100px] size-[520px] rounded-full bg-radial from-violet-400/30 to-violet-400/0 opacity-60 blur-3xl"
+    ></div>
+    <div
+      class="pointer-events-none absolute -right-[200px] -bottom-[100px] size-[480px] rounded-full bg-radial from-sky-300/20 to-sky-300/0 opacity-60 blur-3xl"
+    ></div>
+
+    <div
+      class="relative z-10 inline-flex items-center justify-start rounded-full bg-white/10 px-4 py-2 outline outline-1 -outline-offset-1 outline-white/20 backdrop-blur-sm"
+    >
+      <span class="text-xs font-semibold text-white/90">الخطوة الأخيرة</span>
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center justify-center gap-4 text-center">
+      <h3
+        class="text-2xl font-bold leading-snug text-[#5A52B5] md:text-3xl lg:text-4xl lg:leading-snug"
+      >
+        إذا كنت تريد أن تبقى منفّذًا للـTasks فهذا اختيارك.<br />
+        <span class="mt-2 inline-block">
+          لكن إذا كنت ترى نفسك فعلًا في Product Management —
+          <span
+            class="inline-flex items-center justify-center rounded-lg bg-[#AD7BE9] px-3 py-1 text-white"
+            >فابدأ</span
+          >
+        </span>
+      </h3>
+
+      <p class="max-w-[820px] text-base font-medium leading-8 text-[#857FC8] md:text-lg">
+        ليس عليك أن تستمرّ في جمع معلوماتٍ من كلّ مكان، وليس عليك أن تنتظر فرصةً تأتي وحدها — لأنّنا
+        نقدّم لك الآن الخريطة الواضحة التي تبدأ منها.
+      </p>
+    </div>
+
+    <button
+      (click)="enrollNow()"
+      class="relative z-10 mt-2 flex h-16 max-w-full flex-row-reverse items-center justify-center gap-4 rounded-full bg-[#211951] px-6 transition-transform hover:scale-105 hover: focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-8"
+    >
+      <div class="flex items-center justify-center rounded-full bg-[#AD7BE9] px-4 py-2">
+        <span class="font-mono text-sm font-bold text-white md:text-base" dir="ltr">$147</span>
+      </div>
+      <span class="text-base font-bold text-white md:text-lg cursor-pointer"
+        >انضمّ الآن إلى Product Manager Career Accelerator</span
+      >
+    </button>
+
+    <div class="relative z-10 flex flex-wrap items-center justify-center gap-4 mt-2">
+      <div
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-l from-sage-200 to-white px-4 py-2 shadow-sm"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+        >
+          <g clip-path="url(#clip0_771_30401)">
+            <path
+              d="M8.00033 14.6673C8.00033 14.6673 13.3337 12.0007 13.3337 8.00065V3.33398L8.00033 1.33398L2.66699 3.33398V8.00065C2.66699 12.0007 8.00033 14.6673 8.00033 14.6673Z"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke="#8AA873"
+            />
+            <path
+              d="M6 7.99935L7.33333 9.33268L10 6.66602"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke="#8AA873"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_771_30401">
+              <rect width="16" height="16" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+        <span class="text-xs font-medium text-[#5B7349] md:text-sm"
+          >الدخول بدون مخاطرة — ضمان استرداد 100%</span
+        >
+      </div>
+
+      <div
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-l from-sky-200 to-white px-4 py-2 shadow-sm"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+        >
+          <path
+            d="M8 4V8L10.6667 9.33333"
+            stroke-width="1.33333"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="#1A7CB9"
+          />
+          <path
+            d="M14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8Z"
+            stroke-width="1.33333"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke="#1A7CB9"
+          />
+        </svg>
+        <span class="text-xs font-bold text-[#1A7CB9] md:text-sm"
+          >سعر الإطلاق متاحٌ لفترةٍ محدودة</span
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<div class="flex justify-center items-center">
+  <div
+    class="self-stretch px-20 py-11 bg-indigo-950 inline-flex flex-col justify-center items-center overflow-hidden"
+  >
+    <div
+      class="w-[1500px] text-center justify-center text-white/80 text-sm font-normal font-['thmanyah_serif_text'] leading-7"
+    >
+      © جميع الحقوق محفوظة لدى شركة DPC Consulting. هذا المحتوى محميٌّ بموجب قوانين الملكية الفكرية
+      وحقوق النشر، ويُمنع تداوله أو إعادة نشره أو نسخه دون إذنٍ مسبق.
+    </div>
+  </div>
+</div>

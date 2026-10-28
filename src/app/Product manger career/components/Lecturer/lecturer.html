@@ -1,0 +1,125 @@
+<section id="lecturer-section"
+  class="flex w-full flex-col items-center justify-start gap-12 overflow-hidden bg-white px-4 py-16 md:px-10 lg:px-20 lg:py-20"
+  dir="rtl"
+>
+  <div class="flex flex-col items-center justify-start gap-4 text-center" data-aos="fade-up">
+    <div
+      class="inline-flex items-center justify-start overflow-hidden rounded-full bg-violet-100 px-4 py-1.5"
+    >
+      <span class="text-xs font-bold text-purple-600">المحاضر</span>
+    </div>
+    <h2
+      class="text-3xl font-bold leading-tight text-navy md:text-4xl lg:text-5xl lg:leading-[58px]"
+    >
+      تعرف على المحاضر
+    </h2>
+  </div>
+
+  <div class="flex w-full max-w-[1200px] flex-col items-center justify-center gap-6">
+    @for (instructor of instructors(); track instructor.name; let i = $index) {
+      <div
+        data-aos="fade-up"
+        [attr.data-aos-delay]="i * 150"
+        class="flex w-full flex-col-reverse items-center justify-between gap-8 rounded-3xl bg-white p-6 outline outline-1 -outline-offset-1 outline-neutral-border shadow-sm md:flex-row md:p-8 lg:p-10 lg:gap-12"
+      >
+        <div class="w-full shrink-0 rounded-2xl bg-[#E5E5E5] md:w-[220px] lg:w-[250px]">
+          <img
+            src="/products-manger-career/moaz elmasry.png"
+            [alt]="instructor.name"
+            class="h-auto w-full aspect-[4/5] rounded-2xl object-cover shadow-sm grayscale"
+            loading="lazy"
+          />
+
+          <ul class="flex items-center justify-center gap-3 rounded-b-2xl bg-white p-4">
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+              >
+                <path
+                  d="M0.0360776 0L5.82737 7.74513L0 14.0424H1.31189L6.41425 8.52933L10.5364 14.0424H15L8.88315 5.86166L14.3075 0H12.9957L8.29716 5.07747L4.50053 0H0.0369476H0.0360776ZM1.96474 0.9664H4.01484L13.0696 13.0761H11.0195L1.96474 0.9664Z"
+                  fill="#5B5775"
+                />
+              </svg>
+            </li>
+
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="9"
+                height="17"
+                viewBox="0 0 9 17"
+                fill="none"
+              >
+                <path
+                  d="M6.0324 3.83062V6.22736H8.99923L8.52944 9.45592H6.0324V16.8944C5.53176 16.9638 5.01954 17 4.49961 17C3.89946 17 3.31011 16.9522 2.73618 16.8597V9.45592H0V6.22736H2.73618V3.29485C2.73618 1.47551 4.21188 0 6.03317 0V0.00154332C6.03857 0.00154332 6.0432 0 6.0486 0H9V2.79222H7.07148C6.49833 2.79222 6.03317 3.25707 6.03317 3.82985L6.0324 3.83062Z"
+                  fill="#5B5775"
+                />
+              </svg>
+            </li>
+
+            <li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.45v6.3ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V8.99h3.56v11.46ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"
+                  fill="#5B5775"
+                />
+              </svg>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex flex-1 flex-col items-start justify-start gap-5 w-full">
+          <div class="flex flex-col items-start gap-1">
+            <h3 class="text-2xl font-bold text-navy md:text-3xl">{{ instructor.name }}</h3>
+            <p class="text-base font-medium text-purple-600">{{ instructor.title }}</p>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-start gap-2.5 mt-1">
+            <span
+              class="rounded-full bg-violet-50 px-3 py-1 text-sm font-medium text-neutral-text"
+              >{{ instructor.currentRole }}</span
+            >
+            @for (badge of instructor.badges; track badge) {
+              <span
+                class="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-neutral-text"
+                >{{ badge }}</span
+              >
+            }
+          </div>
+
+          <p class="text-base font-normal leading-7 text-neutral-text">
+            {{ instructor.desc }}
+          </p>
+
+          <div class="mt-2 flex items-center justify-start gap-3" dir="rtl">
+            @for (stat of instructor.stats; track stat; let i = $index) {
+              @if (i > 0) {
+                <div class="h-6 w-px bg-violet-200"></div>
+              }
+
+              <div class="flex items-baseline gap-1.5">
+                <span class="text-xl font-bold leading-none text-[#746DC6]">
+                  {{ stat.split(' ')[0] }}
+                </span>
+
+                <span class="text-sm font-medium text-neutral-text">
+                  {{ stat.split(' ').slice(1).join(' ') }}
+                </span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

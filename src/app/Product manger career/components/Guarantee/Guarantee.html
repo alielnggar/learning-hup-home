@@ -1,0 +1,66 @@
+<section
+  class="flex w-full flex-col items-center justify-start overflow-hidden bg-transparent px-4 py-8 md:px-10 lg:px-20 lg:py-12"
+  dir="rtl"
+>
+  <div
+    data-aos="fade-up"
+    class="flex w-full max-w-[1200px] flex-col-reverse items-center justify-center gap-8 overflow-hidden rounded-[32px] bg-gradient-to-br from-lime-50 via-violet-50 to-blue-100 p-8 outline outline-1 -outline-offset-1 outline-neutral-200 shadow-sm md:flex-row md:justify-between md:p-12 lg:p-14"
+  >
+   <div class="flex shrink-0 items-center justify-center">
+      <div
+        class="flex size-20 items-center justify-center rounded-full bg-white shadow-[0px_10px_24px_0px_rgba(33,25,81,0.08)] md:size-24"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 48 48"
+          fill="none"
+          class="size-10 md:size-12"
+        >
+          <path
+            d="M24 44C24 44 40 36 40 24V10L24 4L8 10V24C8 36 24 44 24 44Z"
+            stroke="#8AA873"
+            stroke-width="3.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M18 24L22 28L30 20"
+            stroke="#8AA873"
+            stroke-width="3.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+  
+    <div
+      class="flex flex-1 flex-col items-center justify-center gap-4 text-center md:items-start md:text-right"
+    >
+     
+      @if (showBadge()) {
+        <div
+          class="inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5 shadow-sm"
+        >
+          <span class="text-xs font-bold text-stone-600">{{ badgeText() }}</span>
+        </div>
+      }
+
+      <h3
+        class="text-2xl font-bold leading-snug text-navy md:text-3xl lg:text-4xl lg:leading-[1.4]"
+      >
+        {{ title() }}
+      </h3>
+
+   
+      <p class="text-base font-normal leading-8 text-neutral-text md:text-lg">
+        {{ description() }}
+      </p>
+    </div>
+
+  
+   
+  </div>
+</section>

@@ -28,7 +28,7 @@
                 "output": "/"
               }
             ],
-            "styles": ["src/styles.css", "node_modules/aos/dist/aos.css"]
+            "styles": ["node_modules/aos/dist/aos.css", "src/styles.css"]
           },
           "configurations": {
             "production": {

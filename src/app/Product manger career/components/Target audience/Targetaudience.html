@@ -1,0 +1,61 @@
+<section
+  class="flex w-full flex-col items-center justify-start gap-11 overflow-hidden bg-white px-4 py-16 md:px-10 lg:px-20 lg:py-24"
+  dir="rtl"
+>
+
+  <div class="flex flex-col items-center justify-start gap-4 text-center" data-aos="fade-up">
+  
+    <div
+      class="inline-flex items-center justify-start overflow-hidden rounded-full bg-sage-100 px-4 py-1.5 shadow-sm"
+    >
+      <span class="text-xs font-bold text-sage-ink">الفئة المستهدفة</span>
+    </div>
+
+   
+    <h2
+      class="text-3xl font-bold leading-tight text-navy md:text-4xl lg:text-5xl lg:leading-[56px]"
+    >
+      لمن يناسب هذا البرنامج؟
+    </h2>
+
+  
+    <p class="text-base font-normal leading-8 text-neutral-text md:text-lg">
+      البرنامج مناسبٌ لك إذا كنت…
+    </p>
+  </div>
+
+  
+  <div class="grid w-full max-w-[1280px] grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+    @for (audience of audiences(); track audience.title; let i = $index) {
+      <div
+        data-aos="fade-up"
+        [attr.data-aos-delay]="(i % 2) * 100"
+        class="flex h-full flex-col items-start justify-start gap-4 rounded-3xl bg-neutral-ground p-6 outline outline-1 -outline-offset-1 outline-neutral-border shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md md:p-8"
+      >
+      
+        <div
+          class="flex size-14 shrink-0 items-center justify-center rounded-2xl shadow-sm"
+          [ngClass]="audience.iconBg"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
+            [innerHTML]="audience.iconSvg"
+          ></svg>
+        </div>
+
+      
+        <h3 class="w-full text-xl font-bold leading-9 text-navy md:text-2xl">
+          {{ audience.title }}
+        </h3>
+
+      
+        <p class="w-full text-[16px] font-medium leading-8 text-neutral-text">
+          {{ audience.desc }}
+        </p>
+      </div>
+    }
+  </div>
+</section>

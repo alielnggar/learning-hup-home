@@ -1,0 +1,37 @@
+<section class="flex w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-purple-600 to-navy px-4 py-16 md:px-10 lg:px-20 lg:py-24" dir="rtl">
+  
+  
+  <div class="flex flex-col items-center justify-start gap-4 text-center mb-10" data-aos="fade-up">
+    <h2 class="max-w-[900px] text-3xl font-bold leading-tight text-white md:text-4xl lg:text-[42px] lg:leading-[60px]">
+      تعرّف على المنهجية التي نتبنّاها — The Delivery Control Loop
+    </h2>
+    <p class="max-w-[800px] text-base font-normal leading-8 text-white/80 md:text-lg">
+      ستمكّنك هذه المنهجية من التعامل مع Software Delivery كحلقةٍ واحدة متّصلة، لا كمهامّ منفصلة.
+    </p>
+  </div>
+
+ 
+  <div class="grid w-full max-w-[1200px] grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+    
+    @for (step of steps(); track step.num; let i = $index) {
+      <div 
+        data-aos="fade-up"
+        [attr.data-aos-delay]="(i % 4) * 100"
+        class="flex flex-col items-start justify-start gap-3 rounded-[20px] bg-white p-6 outline outline-1 -outline-offset-1 outline-neutral-border shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
+      >
+      
+        <div class="flex w-full items-center justify-between">
+          <span class="font-mono text-xs font-bold text-purple-600 tracking-wide">{{ step.eng }}</span>
+          <span class="font-mono text-xs font-bold text-violet">{{ step.num }}</span>
+        </div>
+        
+       
+        <h3 class="text-lg font-bold text-navy mt-1">{{ step.ar }}</h3>
+        <p class="text-sm font-normal leading-7 text-neutral-text">
+          {{ step.desc }}
+        </p>
+      </div>
+    }
+
+  </div>
+</section>

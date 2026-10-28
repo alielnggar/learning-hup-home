@@ -1,0 +1,138 @@
+<section
+  class="relative flex w-full flex-col items-center justify-start gap-8 overflow-hidden bg-gradient-to-b from-violet-50 to-white px-4 pt-32 pb-24 md:px-10 lg:pt-44"
+  dir="rtl"
+>
+  
+  <div
+    class="pointer-events-none absolute -left-[120px] -top-[80px] size-[400px] md:size-[520px] rounded-full bg-violet-200/40 blur-3xl"
+  ></div>
+  <div
+    class="pointer-events-none absolute -right-[150px] -top-[150px] size-[500px] md:size-[700px] rounded-full bg-sky-300/20 blur-3xl"
+  ></div>
+
+  
+  <div
+    class="relative z-10 flex flex-col items-center justify-start gap-5 text-center"
+    data-aos="fade-up"
+  >
+    <h1 class="text-4xl font-bold leading-tight text-navy md:text-6xl lg:text-[68px]">
+      Software Delivery Program
+    </h1>
+    <p class="max-w-[720px] text-base font-normal leading-8 text-neutral-text md:text-lg">
+      برنامجٌ متقدّم لقادة المنتج: من صياغة الاستراتيجية وبناء نموذج التشغيل، إلى قيادة الفرق وقياس
+      الأثر.
+    </p>
+
+    
+    <div
+      class="mx-auto inline-flex max-w-full items-center justify-center gap-3 rounded-full border border-violet-100 bg-white/50 px-4 py-2 shadow-sm backdrop-blur-sm"
+      dir="rtl"
+    >
+      <img
+        class="size-10 shrink-0 rounded-full object-cover grayscale  object-[center_5%]"
+        src="/products-manger-career/Avatar.png"
+        alt="معاذ المصري"
+      />
+
+      <span class="text-sm font-medium text-neutral-text sm:text-base">
+        معاذ المصري · Founder, DPC Consulting
+      </span>
+    </div>
+  </div>
+
+  
+  <div
+    data-aos="zoom-in-up"
+    data-aos-delay="200"
+    class="relative z-10 mt-4 flex aspect-video w-full max-w-[880px] cursor-pointer flex-col items-center justify-center overflow-hidden rounded-[24px] bg-navy shadow-2xl transition-transform hover:scale-[1.02]"
+    (click)="playVideo()"
+  >
+  
+    <img
+      src="/products-manger-career/picpng.png"
+      alt="مقدمة الفيديو"
+      class="absolute inset-0 h-full w-full object-cover"
+      loading="lazy"
+    />
+
+   
+    <div class="absolute inset-0 bg-gradient-to-b from-navy/20 to-navy/70"></div>
+
+    @if (!isVideoPlaying()) {
+     
+      <button
+        type="button"
+        class="relative z-10 flex size-20 items-center justify-center rounded-full bg-white shadow-lg transition-transform hover:scale-110 md:size-24"
+      >
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="translate-x-[-2px] text-navy"
+        >
+          <path d="M5 3l14 9-14 9V3z" />
+        </svg>
+      </button>
+
+    
+      <div class="absolute bottom-6 right-6 z-10 inline-flex items-center gap-2">
+        <span class="text-xs font-bold text-white">شاهد المقدّمة</span>
+        <span class="text-xs font-medium text-white/80">02:30</span>
+      </div>
+    }
+  </div>
+
+ 
+  <div
+    class="relative z-10 mt-6 flex flex-col items-center justify-center gap-6 w-full"
+    data-aos="fade-up"
+    data-aos-delay="300"
+  >
+   
+    <div class="flex flex-col items-center gap-4">
+      <button
+        (click)="buyNow()"
+        class="inline-flex h-14 items-center cursor-pointer justify-center gap-4 rounded-full bg-navy px-2 pr-6 transition-colors hover:bg-purple-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
+      >
+         <span class="text-base font-bold text-white">اشترِ البرنامج الأن</span>
+      <div
+        class="flex h-10 items-center justify-center rounded-full px-4 outline outline-1 -outline-offset-1 "
+      >
+        <span class="text-lg font-bold text-white" dir="ltr">$390</span>
+      </div>
+      </button>
+
+   
+      <div class="inline-flex items-center justify-center gap-2 rounded-full bg-sage-100 px-4 py-2">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="text-sage-ink"
+        >
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span class="text-sm font-medium text-sage-ink">ضمان استرداد خلال 14 يومًا</span>
+      </div>
+    </div>
+
+    
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      @for (feature of features(); track feature.text) {
+        <div
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm outline outline-1 -outline-offset-1 outline-neutral-border"
+        >
+          <div class="size-1.5 rounded-full" [ngClass]="feature.color"></div>
+          <span class="text-xs font-bold text-navy md:text-sm">{{ feature.text }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

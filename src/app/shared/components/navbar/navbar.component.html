@@ -1,0 +1,23 @@
+<header
+  class="sticky top-0 z-50 w-full border-b border-neutral-line bg-white/90 backdrop-blur-md"
+  dir="rtl"
+>
+  <div class="mx-auto flex h-20 max-w-[1440px] items-center justify-center px-4 md:px-10 lg:px-20">
+    <nav aria-label="القائمة الرئيسية" class="hidden lg:block">
+      <ul class="flex items-center justify-center gap-[2px]  mr-28">
+        @for (item of navItems; track item.label) {
+          <li>
+            <button
+              type="button"
+              (click)="scrollTo(item.id)"
+              class="flex cursor-pointer items-center justify-center gap-1 rounded-full px-4 py-2 text-[15px] font-medium text-navy transition-colors duration-300 hover:bg-neutral-ground focus-visible:bg-neutral-ground"
+            >
+              {{ item.label }}
+            </button>
+          </li>
+        }
+      </ul>
+    </nav>
+    <div class="hidden w-20 lg:block"></div>
+  </div>
+</header>
