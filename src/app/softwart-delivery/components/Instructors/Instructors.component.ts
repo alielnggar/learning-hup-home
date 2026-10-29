@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-instructors',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './instructors.html',
+  templateUrl: './Instructors.html',
 })
 export class InstructorsComponent {
   instructors = signal([
