@@ -8,7 +8,6 @@ import { HeaderComponent } from './shared/components/header/header.share.compone
   selector: 'app-root',
   imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css', // أو styles.css حسب مشروعك
 })
 export class App {
   protected readonly title = signal('lerning-hub');
