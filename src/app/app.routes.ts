@@ -7,14 +7,14 @@ export const routes: Routes = [
   {
     path: 'Home',
     component: HomeComponent,
-    title: 'Home Page',
+    title: 'Home',
   },
   {
     path: 'ResearchPageComponent',
     component: ResearchPageComponent,
-    title: 'Research Page',
+    title: 'Research',
   },
-  { path: 'programs', component: ProgramsPageComponent, title: 'Programs Page' },
+  { path: 'programs', component: ProgramsPageComponent, title: 'Programs' },
   {
     path: '',
     redirectTo: 'Home',
