@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+
+<main class="bg-white">
+  <app-programs-hero (search)="handleSearch($event)"></app-programs-hero>
+  <app-programs-list [searchParams]="currentSearchParams()"></app-programs-list>
+  <app-instructors></app-instructors>
+  <app-feedback></app-feedback>
+  <app-certificate></app-certificate>
+  <app-guarantee></app-guarantee>
+  <app-faq></app-faq>
+</main>
+
+<app-footer></app-footer>

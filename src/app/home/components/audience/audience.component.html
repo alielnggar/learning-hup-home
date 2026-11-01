@@ -1,0 +1,62 @@
+<section class="mx-auto max-w-[1280px] px-4 py-[49px] md:px-6 xl:px-0" dir="rtl" data-aos="fade-up">
+  <div class="mx-auto mb-[43px] flex max-w-[640px] flex-col items-center gap-[7px] text-center">
+    <h2 class="p-2.5 font-serif text-[36px] leading-[65px] font-medium text-navy md:text-[46px]">
+      اختر مسارك
+      <span
+        class="relative inline-block z-10 px-1 after:absolute after:-bottom-1 after:left-0 after:-z-10 after:h-16 after:w-full after:rounded-sm after:bg-purple-100"
+        >المناسب</span
+      >
+    </h2>
+    <p class="max-w-[606px] font-serif text-base leading-[34.2px] text-neutral-text md:text-lg">
+      سواء كنت تتعلّم لنفسك، أو تقود فريقًا، أو تبحث وتشارك بخبرتك؛ في الـHub مدخلٌ يناسبك.
+    </p>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-3">
+    @for (aud of audiences; track aud.en) {
+      <a
+        href="#"
+        [style.backgroundImage]="aud.bg"
+        [class]="aud.accent"
+        class="group flex h-full min-h-[300px] flex-col justify-between gap-16 rounded-[28px] border border-white p-5 transition-[transform,border-color,box-shadow] duration-300 ease-soft hover:-translate-y-1 hover:shadow-[0_16px_32px_-6px_rgba(33,25,81,0.1)] focus-visible:-translate-y-1 md:h-[340px]"
+      >
+        <div class="flex flex-col gap-5">
+          <span
+            class="flex size-[46px] items-center justify-center rounded-[14px] bg-white text-navy shadow-[0_10px_15px_rgba(33,25,81,0.07),0_1px_1px_rgba(33,25,81,0.05)]"
+          >
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              [innerHTML]="aud.iconSvg"
+            ></svg>
+          </span>
+          <div class="flex flex-col gap-3 font-serif">
+            <h3 class="text-[26px] leading-[33.5px] font-medium text-navy">{{ aud.title }}</h3>
+            <p class="max-w-[354px] text-[14.72px] leading-[25px] text-[#5b5775]">{{ aud.body }}</p>
+          </div>
+        </div>
+
+        <span
+          class="flex items-center gap-[13px] font-serif text-base leading-[24px] font-medium text-purple-600"
+        >
+          استكشف المسار
+          <svg
+            class="w-4 h-4 transition-transform duration-300 ease-soft group-hover:-translate-x-1 group-focus-visible:-translate-x-1"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path d="M19 12H5M12 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </a>
+    }
+  </div>
+</section>

@@ -1,0 +1,79 @@
+<section class="px-3 pb-[57px] pt-[110px] md:px-6" dir="rtl">
+  <div
+    class="mx-auto flex max-w-[1392px] flex-col items-start rounded-[32px] bg-[linear-gradient(150deg,#746dc6_0%,#211951_100%)] px-6 py-14 md:rounded-[40px] md:px-24 md:py-[90px]"
+    data-aos="zoom-in"
+    data-aos-duration="800"
+  >
+    <h2 class="text-[34px] font-bold leading-[1.25] text-white md:text-[52px]" data-aos="fade-up">
+      لديك سؤالٌ يستحق البحث؟
+    </h2>
+    <p
+      class="mt-4 max-w-[600px] text-[17px] leading-[1.8] text-white/75 md:text-[18px]"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      نبحث في الأسئلة التي يواجهها الممارسون فعلًا. شاركنا سؤالك، أو انضم إلينا باحثًا، أو ابنِ معنا
+      بحثًا لمؤسستك.
+    </p>
+
+    <div class="mt-12 grid w-full gap-[18px] lg:grid-cols-3">
+      @for (o of options; track o.title; let i = $index) {
+        <a
+          href="#"
+          class="group flex flex-col items-start rounded-[26px] p-7 cursor-pointer border border-white/15 bg-white/10 backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-2xl lg:h-[280px]"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="i * 150"
+        >
+          <span
+            class="flex size-[52px] items-center justify-center rounded-2xl bg-white/12 text-white transition-colors duration-300 group-hover:bg-[#e4e2f6] group-hover:text-purple-600"
+            [innerHTML]="o.icon"
+          >
+          </span>
+          <h3
+            class="mt-[22px] text-[23px] font-bold text-white transition-colors duration-300 group-hover:text-navy"
+          >
+            {{ o.title }}
+          </h3>
+          <p
+            class="text-[15px] leading-[1.8] text-white/72 transition-colors duration-300 group-hover:text-[#4a4566]"
+          >
+            {{ o.body }}
+          </p>
+          <span
+            class="mt-auto pt-4 text-[15px] font-bold text-white transition-colors duration-300 group-hover:text-navy"
+            >{{ o.cta }}</span
+          >
+        </a>
+      }
+    </div>
+
+    <div
+      class="mt-14 flex w-full flex-col gap-6 border-t border-white/15 pt-9 lg:flex-row lg:items-center lg:justify-between"
+      data-aos="fade-up"
+      data-aos-delay="300"
+    >
+      <div class="flex flex-col gap-1.5">
+        <p class="text-[20px] font-bold text-white">تصلك الأبحاث الجديدة أولًا</p>
+        <p class="text-[15px] text-white/65">ملخّصٌ شهري لأحدث الإصدارات والمشاريع الجارية.</p>
+      </div>
+
+      <form
+        (submit)="onSubmit($event)"
+        class="flex h-[62px] w-full max-w-[520px] items-center gap-3 rounded-full bg-white pl-[7px] pr-[22px]"
+      >
+        <input
+          type="email"
+          required
+          placeholder="بريدك الإلكتروني"
+          class="min-w-0 flex-1 bg-transparent text-[15px] text-navy outline-none placeholder:text-[#8e89ad]"
+        />
+        <button
+          type="submit"
+          class="h-12 shrink-0 rounded-full cursor-pointer bg-navy px-[26px] text-sm font-bold text-white transition-colors hover:bg-[#2f2670]"
+        >
+          {{ sent() ? 'تم ✓' : 'اشترك' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

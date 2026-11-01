@@ -1,0 +1,159 @@
+<section
+  id="all-programs"
+  class="mx-auto flex max-w-[1440px] scroll-mt-28 flex-col items-center gap-8 px-4 pt-6 pb-20 md:px-6 xl:px-20"
+  dir="rtl"
+>
+  <h2 class="text-[32px] leading-[1.3] font-bold text-navy md:text-[46px]" data-aos="fade-up">
+    كلّ البرامج
+  </h2>
+
+  <div
+    class="flex max-w-full gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none]"
+    data-aos="fade-up"
+  >
+    @for (d of domains; track d.value) {
+      <button
+        type="button"
+        (click)="selectedDomain.set(d.value)"
+        class="flex h-[38px] shrink-0 items-center rounded-full border px-4 text-[14px] font-medium whitespace-nowrap transition-colors"
+        [ngClass]="
+          selectedDomain() === d.value
+            ? 'border-navy bg-navy text-white'
+            : 'border-neutral-border bg-white text-navy hover:bg-[#f0edfb]'
+        "
+      >
+        {{ d.label }}
+      </button>
+    }
+  </div>
+
+  <div class="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-3">
+    @for (p of visiblePrograms(); track p.title; let i = $index) {
+      <a
+        href="#"
+        class="group flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-line bg-white transition-[box-shadow,transform] duration-300 ease-soft hover:-translate-y-1 hover:shadow-lg"
+        data-aos="fade-up"
+        [attr.data-aos-delay]="i * 100"
+      >
+        <div class="relative h-[210px] shrink-0 overflow-hidden bg-[#32237d]">
+          <img
+            [src]="'/figma/home-v2/' + p.cover"
+            alt=""
+            class="h-full w-full object-cover transition-transform duration-500 ease-soft group-hover:scale-[1.03]"
+          />
+        </div>
+        <div class="flex flex-1 flex-col items-start px-6 pt-[18px] pb-[22px] text-right">
+          <span
+            class="rounded-full py-[5px] pr-3 pl-2.5 text-xs leading-none font-medium"
+            [ngClass]="p.tone"
+            >{{ p.tag }}</span
+          >
+          <h3
+            class="mt-2.5 text-[18px] leading-[1.4] font-bold text-navy transition-colors duration-300 group-hover:text-purple-600"
+          >
+            {{ p.title }}
+          </h3>
+          <p class="mt-2.5 text-[14.5px] leading-[1.7] text-neutral-text">{{ p.desc }}</p>
+          <div
+            class="mt-2.5 flex flex-wrap items-center gap-4 text-[13.5px] font-medium text-neutral-text"
+          >
+            <span class="inline-flex items-center gap-1.5"
+              ><img src="/figma/home-v2/icon-duration.svg" alt="" class="size-4" />{{
+                p.hours
+              }}</span
+            >
+            <span class="inline-flex items-center gap-1.5"
+              ><img src="/figma/home-v2/icon-units.svg" alt="" class="size-4" />{{ p.units }}</span
+            >
+            <span class="inline-flex items-center gap-1.5"
+              ><img src="/figma/home-v2/icon-level.svg" alt="" class="size-4" />{{ p.level }}</span
+            >
+          </div>
+          <span
+            class="mt-auto flex w-full items-center gap-2 border-t border-neutral-line pt-4 text-sm font-bold text-navy transition-colors duration-300 group-hover:text-purple-600"
+          >
+            تفاصيل البرنامج
+            <svg
+              class="size-4 transition-transform duration-300 ease-soft group-hover:-translate-x-1.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </span>
+        </div>
+      </a>
+    }
+  </div>
+
+  @if (visiblePrograms().length === 0) {
+    <p class="text-base text-neutral-text">لا توجد برامج مطابقة. جرّب كلمةً أخرى أو مجالًا آخر.</p>
+  }
+</section>
+
+<section class="mx-auto flex max-w-[1440px] px-4 pb-20 md:px-6 xl:px-20" dir="rtl">
+  <div class="grid w-full gap-6 md:grid-cols-2">
+    <div
+      class="flex flex-col items-start gap-2.5 rounded-3xl bg-white p-[22px] shadow-[0_14px_34px_rgba(33,26,82,0.08)]"
+      data-aos="fade-up"
+    >
+      <span class="flex items-center">
+        <img
+          src="/programs/Vector (2).svg"
+          alt=""
+          class="-ms-2 size-10 rounded-full border-2 border-white first:ms-0"
+        />
+        <img
+          src="/programs/zaid.svg"
+          alt=""
+          class="-ms-2 size-10 rounded-full border-2 border-white first:ms-0"
+        />
+
+        <img
+          src="/programs/Vector (1).svg"
+          alt=""
+          class="-ms-2 size-10 rounded-full border-2 border-white first:ms-0"
+        />
+
+        <span
+          class="-ms-2 flex size-10 items-center justify-center rounded-full border-2 border-white bg-navy text-lg text-white"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 17 17"
+            fill="none"
+          >
+            <path
+              d="M8.2002 1.19995V8.19995M8.2002 8.19995V15.2M8.2002 8.19995H1.2002M8.2002 8.19995H15.2002"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke="white"
+            /></svg
+        ></span>
+      </span>
+      <strong dir="ltr" class="text-[48px] leading-none font-bold text-navy">+1000</strong>
+      <span class="text-[15px] text-[#6e6a8c]">خرّيج من مصر والسعودية والخليج</span>
+    </div>
+    <div
+      class="flex items-center gap-3 self-stretch rounded-3xl bg-white p-[22px] shadow-[0_14px_34px_rgba(33,26,82,0.04)]"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <span
+        class="flex size-11 items-center justify-center rounded-3xl bg-[#f0edfb] text-[18px] font-bold text-purple-600"
+        >م</span
+      >
+      <span class="flex flex-col gap-0.5">
+        <strong class="text-base text-navy">يقدّمها ممارسون</strong>
+        <span class="text-[13px] text-[#6e6a8c]">خبراء من SAR وناجز وTurbo</span>
+      </span>
+    </div>
+  </div>
+</section>

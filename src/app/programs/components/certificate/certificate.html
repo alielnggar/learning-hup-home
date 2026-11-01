@@ -1,0 +1,43 @@
+<section
+  class="flex w-full flex-col items-center justify-start overflow-hidden bg-white px-4 py-16 md:px-10 lg:px-20 lg:py-24"
+  dir="rtl"
+>
+  <div
+    class="flex w-full max-w-[1000px] flex-col items-center justify-start gap-12"
+    data-aos="fade-up"
+  >
+    
+    <div class="flex flex-col items-center justify-start gap-4 text-center">
+    
+      @if (showBadge()) {
+       
+      }
+
+    
+      <h2
+        class="text-[40px] font-bold leading-tight text-navy md:text-4xl lg:text-[40px]"
+        [innerHTML]="title()"
+      ></h2>
+
+     
+      <p
+        class="max-w-[760px] text-base font-normal leading-8 text-neutral-text md:text-lg"
+        [innerHTML]="description()"
+      ></p>
+    </div>
+
+   
+    <div
+      data-aos="zoom-in"
+      data-aos-delay="150"
+      class="flex w-full items-center justify-center overflow-hidden rounded-2xl md:rounded-3xl lg:px-10"
+    >
+      <img
+        src="/products-manger-career/guarantee.png"
+        alt="Certificate of Completion"
+        class="h-auto w-full max-w-[900px] rounded-xl object-contain  md:rounded-2xl"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>

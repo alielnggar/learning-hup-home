@@ -1,0 +1,98 @@
+<section class="mx-auto flex max-w-[1440px] flex-col gap-10 px-4 py-10 md:px-20" dir="rtl">
+  <div
+    class="flex flex-col items-start justify-between gap-6 overflow-hidden md:flex-row md:items-end"
+  >
+    <div class="flex flex-col items-start gap-2" data-aos="fade-up">
+      <div
+        class="inline-flex items-center justify-start gap-1.5 rounded-full bg-violet-100 px-2.5 py-1"
+      >
+        <span
+          class="text-center text-xs font-normal leading-4 text-violet-ink font-['thmanyah_serif_text']"
+          >الخبراء و الاستشاريين</span
+        >
+      </div>
+      <h2
+        class="text-right text-[28px] font-bold leading-10 text-navy md:text-4xl font-['thmanyah_serif_text']"
+      >
+        ممارسون يقودون البرامج، لا محاضرون
+      </h2>
+      <p
+        class="text-right text-base font-normal leading-7 text-neutral-text font-['thmanyah_serif_text']"
+      >
+        خبراء من DPC يعملون مع فرق المنتجات والتحوّل في المنطقة، وينقلون ما يحدث في المشاريع فعلًا.
+      </p>
+    </div>
+
+    <button
+      type="button"
+      class="group flex h-12 cursor-pointer items-center justify-center gap-2 rounded-full outline outline-[1.5px] outline-offset-[-1.5px] outline-neutral-border px-6 transition-colors hover:bg-neutral-ground"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+    
+      <span
+        class="text-center  text-base font-medium leading-4 text-navy font-['thmanyah_serif_text']"
+        >كلّ الخبراء</span
+      >
+        <div
+        class="relative size-5 overflow-hidden transition-transform duration-300 group-hover:-translate-x-1"
+      >
+       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M9.99984 15.8334L4.1665 10.0001L9.99984 4.16675" stroke-width="1.45833" stroke-linecap="round" stroke-linejoin="round" stroke="#211951"/>
+  <path d="M15.8332 10H4.1665" stroke-width="1.45833" stroke-linecap="round" stroke-linejoin="round" stroke="#211951"/>
+        </svg>
+      </div>
+    </button>
+  </div>
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    @for (instructor of instructors(); track instructor.name; let i = $index) {
+      <div
+        class="group flex flex-col items-start justify-start rounded-3xl bg-white px-2.5 pt-2.5 pb-5 shadow-[0px_12px_32px_0px_rgba(33,25,81,0.02)] outline outline-1 outline-offset-[-1px] outline-neutral-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+        data-aos="fade-up"
+        [attr.data-aos-delay]="i * 100"
+      >
+        <div class="relative w-full overflow-hidden rounded-[20px] bg-neutral-line pt-[110%]">
+          <img
+            [src]="instructor.image"
+            [alt]="instructor.name"
+            class="absolute left-0 top-0 h-full w-full object-cover object-bottom transition-transform duration-500 ease-soft group-hover:scale-105"
+          />
+        </div>
+
+        <div
+          class="flex w-full flex-col items-start justify-start gap-1.5 overflow-hidden px-2.5 pt-4"
+        >
+          <h3
+            class="w-full text-right text-xl font-medium leading-7 text-navy transition-colors duration-300 group-hover:text-purple-600 font-['thmanyah_serif_text']"
+          >
+            {{ instructor.name }}
+          </h3>
+          <p
+            class="w-full text-right text-sm font-normal leading-5 text-purple-600 font-['thmanyah_serif_text']"
+          >
+            {{ instructor.title }}
+          </p>
+          <p
+            class="w-full text-right text-sm font-normal leading-6 text-neutral-text font-['thmanyah_serif_text']"
+          >
+            {{ instructor.bio }}
+          </p>
+
+          <div class="inline-flex w-full items-start justify-start gap-1.5 overflow-hidden pt-1.5">
+            @for (tag of instructor.tags; track tag) {
+              <div
+                class="flex items-start justify-start overflow-hidden rounded-full bg-violet-ground px-2.5 py-1"
+              >
+                <span
+                  class="text-right text-xs font-normal leading-4 text-purple-600 font-['thmanyah_serif_text']"
+                  >{{ tag }}</span
+                >
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

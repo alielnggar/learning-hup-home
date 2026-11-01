@@ -1,0 +1,180 @@
+<section class="px-3 pt-4 md:px-6" dir="rtl">
+  <div
+    class="relative mx-auto max-w-[1392px] overflow-hidden rounded-[28px] bg-[linear-gradient(151deg,#1a1442_0%,#2a2170_55%,#4b3fa6_100%)] md:rounded-[36px] xl:h-[780px]"
+  >
+   
+
+    <div
+      aria-hidden
+      class="pointer-events-none absolute -left-[60px] top-[40px] h-[520px] w-[700px] rounded-full bg-radial from-violet-400/35 to-transparent blur-2xl"
+    ></div>
+    <div
+      aria-hidden
+      class="pointer-events-none absolute left-[1000px] top-[520px] h-[460px] w-[600px] rounded-full bg-radial from-purple-500/45 to-transparent blur-2xl"
+    ></div>
+    <div
+      aria-hidden
+      class="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:58px_58px] [mask-image:radial-gradient(ellipse_at_center,#000_30%,transparent_80%)]"
+    ></div>
+
+    <div
+      class="relative flex flex-col items-start px-6 pb-12 pt-32 md:px-12 xl:absolute xl:right-[80px] xl:top-[192px] xl:w-[600px] xl:p-0"
+      data-aos="fade-left"
+      data-aos-duration="1000"
+    >
+      <span
+        class="rounded-full border border-white/20 bg-white/10 px-4 py-[7px] text-sm text-violet-100"
+        >البحث والابتكار في DPC</span
+      >
+      <h1 class="mt-[22px] text-[40px] font-bold leading-[1.22] text-white md:text-[66px]">
+        أبحاثٌ تطبيقية<br />
+        من <span class="text-violet-200">أسئلة الممارسة</span>
+      </h1>
+      <p class="mt-5 max-w-[540px] text-base leading-[1.85] text-white/80 md:text-[19px]">
+        أوراقٌ بحثية ودراسات حالة وتقارير يُعدّها فريق DPC، تربط ما يحدث في المشاريع الفعلية
+        بقراراتٍ قابلة للقياس.
+      </p>
+
+      <form
+        class="mt-[34px] flex h-16 w-full max-w-[560px] items-center justify-between gap-3 rounded-full bg-white pl-2 pr-[22px]"
+        (submit)="onSubmit($event)"
+      >
+        <svg
+          class="size-5 shrink-0 text-neutral-arrow"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+        <input
+          [value]="searchQuery()"
+          (input)="updateQuery($event)"
+          placeholder="ابحث في الأبحاث والأوراق…"
+          class="min-w-0 flex-1 bg-transparent text-base text-navy outline-none placeholder:text-neutral-arrow"
+        />
+        <button
+          type="submit"
+          class="h-12 shrink-0 rounded-full bg-navy px-[26px] text-[14.5px] font-bold text-white transition-colors hover:bg-purple-900"
+        >
+          ابحث
+        </button>
+      </form>
+    </div>
+
+    
+    <div
+      class="relative mx-auto hidden h-[560px] w-[560px] lg:block xl:absolute xl:left-[100px] xl:top-[150px]"
+      data-aos="zoom-in"
+      data-aos-duration="1200"
+      data-aos-delay="200"
+    >
+      
+      @for (card of stackCards(); track card.title) {
+        <button
+          type="button"
+          (click)="openPaywall.emit({ kind: card.kind, title: card.title })"
+          class="absolute flex h-[400px] w-[300px] flex-col overflow-hidden rounded-[18px] bg-white text-right shadow-2xl transition-transform hover:-translate-y-1"
+          [ngClass]="card.pos"
+        >
+         
+          <span
+            class="relative flex h-[170px] w-full items-center justify-center overflow-hidden bg-gradient-to-br"
+            [ngClass]="card.cover"
+          >
+            <img
+              src="/reasearchpage/abstract.png"
+              alt="Graph"
+              class="h-full w-full object-cover mix-blend-multiply opacity-80"
+            />
+          </span>
+          <span class="flex flex-col gap-2.5 px-[22px] py-5 font-bold">
+            <span class="text-[12.5px] text-purple-600">{{ card.kind }}</span>
+            <span class="text-[19px] leading-[1.5] text-navy">{{ card.title }}</span>
+           
+            <span
+              class="mt-auto flex justify-between pt-6 text-[12.5px] font-normal text-neutral-arrow"
+            >
+              <span>{{ card.author || 'فريق DPC' }}</span>
+              <span>{{ card.year || '2026' }}</span>
+            </span>
+          </span>
+          <span class="absolute inset-0" [ngClass]="card.shade"></span>
+        </button>
+      }
+
+     
+      <button
+        type="button"
+        (click)="openPaywall.emit({ kind: 'ورقة بحثية', title: 'مؤشرات نجاح المنتجات الرقمية' })"
+        class="absolute left-[210px] top-[20px] flex h-[400px] w-[300px] rotate-2 flex-col overflow-hidden rounded-[18px] bg-white text-right shadow-2xl transition-transform duration-500 hover:-translate-y-2 hover:rotate-0"
+      >
+       
+        <span
+          class="relative flex h-[170px] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-violet-100 to-violet-200"
+        >
+          <div class="absolute inset-0 size-full bg-purple-100 opacity-50"></div>
+          <img
+            src="/reasearchpage/abstract.png"
+            alt="Graph"
+            class="relative z-10 h-full w-full object-cover mix-blend-multiply"
+          />
+        </span>
+        <span class="flex flex-1 flex-col gap-2.5 px-[22px] py-5 font-bold">
+          <span class="text-[12.5px] text-purple-600">ورقة بحثية · أحدث إصدار</span>
+          <span class="text-[19px] leading-[1.5] text-navy"
+            >مؤشرات نجاح المنتجات الرقمية: من الإطلاق إلى الأثر</span
+          >
+          <span class="mt-auto flex justify-between text-[12.5px] font-normal text-neutral-arrow">
+            <span>فريق DPC للبحث والابتكار</span>
+            <span>2026</span>
+          </span>
+        </span>
+      </button>
+
+      
+      <button
+        type="button"
+        (click)="openPaywall.emit({ kind: 'ورقة بحثية', title: 'مؤشرات نجاح المنتجات الرقمية' })"
+        class="absolute -left-[10px] top-[420px] flex items-center gap-3 rounded-[18px] border border-white/30 bg-white/10 px-[18px] py-3.5 backdrop-blur-md transition-colors hover:bg-white/20 z-20"
+      >
+       
+        <span class="flex flex-col items-start gap-0.5 text-right">
+          <span class="text-sm font-bold text-white">PDF · 24 صفحة</span>
+          <span class="text-[12.5px] text-white/70">ملخّص مجاني للجميع</span>
+        </span>
+        <span
+          class="flex size-[38px] shrink-0 items-center justify-center rounded-xl bg-white text-navy"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+          >
+            <path
+              d="M10.5 2.25H4.5C4.10218 2.25 3.72064 2.40804 3.43934 2.68934C3.15804 2.97064 3 3.35218 3 3.75V14.25C3 14.6478 3.15804 15.0294 3.43934 15.3107C3.72064 15.592 4.10218 15.75 4.5 15.75H13.5C13.8978 15.75 14.2794 15.592 14.5607 15.3107C14.842 15.0294 15 14.6478 15 14.25V6.75L10.5 2.25Z"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke="#211951"
+            />
+            <path
+              d="M10.5 2.25V6.75H15M9 13.5V9M11.25 11.25L9 13.5L6.75 11.25"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke="#211951"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>

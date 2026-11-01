@@ -1,0 +1,64 @@
+<section class="mx-auto flex max-w-[1440px] flex-col gap-10 px-4 pt-[110px] md:px-20" dir="rtl">
+  <div class="flex flex-col items-center gap-3.5" data-aos="fade-up">
+   <span
+        class="rounded-full bg-violet-100 px-[13px] py-1.5 text-[13px] font-medium text-purple-600"
+        >فريق البحث</span
+      >
+    <h2 class="text-[32px] leading-[1.25] font-bold md:text-[46px]">
+      <span class="text-navy">ممارسون يبحثون فيما يعملون عليه</span>
+      
+    </h2>
+  </div>
+
+  <div class="grid gap-[18px] sm:grid-cols-2 lg:flex lg:items-stretch">
+    @for (i of members; track i; let idx = $index) {
+      <article
+        class="flex flex-col rounded-[28px] border border-[#e6e3f2] bg-white px-2.5 pb-5 pt-2.5 lg:w-[300px] lg:shrink-0"
+        data-aos="fade-up"
+        [attr.data-aos-delay]="idx * 100"
+      >
+        <div class="relative h-[308px] overflow-hidden rounded-[20px] bg-[#e5e5e5]">
+          <img
+            src="/reasearchpage/Photo.png"
+            alt="معاذ المصري"
+            class="h-full w-full object-cover object-bottom grayscale "
+          />
+        </div>
+        <div class="flex flex-col gap-1.5 px-2.5 pt-4">
+          <h3 class="text-[21px] font-medium leading-[28px] text-navy">معاذ المصري</h3>
+          <p class="text-sm text-purple-600">مستشار استراتيجية المنتج</p>
+          <div class="flex gap-1.5 pt-1.5">
+            @for (t of tags; track t) {
+              <span class="rounded-full bg-[#f4eefd] px-2.5 py-1 text-xs text-purple-600">{{
+                t
+              }}</span>
+            }
+          </div>
+        </div>
+      </article>
+    }
+
+    <div
+      class="flex flex-col items-start rounded-[26px] bg-[linear-gradient(153deg,#5a52b5_0%,#ad7be9_100%)] px-7 py-[30px] text-white lg:flex-1"
+      data-aos="fade-right"
+      data-aos-delay="300"
+    >
+      <svg class="size-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+        />
+      </svg>
+      <h3 class="mt-[18px] text-[26px] font-bold leading-[1.4]">انضم إلى شبكة الباحثين</h3>
+      <p class="text-[15px] leading-[1.8] text-white/80">
+        ممارس أو أكاديمي في مجالات المنتجات والتحوّل؟ شاركنا في بحثٍ قادم.
+      </p>
+      <a
+        href="#"
+        class="max-lg:mt-6 mt-4 flex h-12 items-center rounded-full bg-white px-[26px] text-sm font-bold text-navy transition-transform duration-300 hover:-translate-y-0.5"
+        >قدّم طلبك ←</a
+      >
+    </div>
+  </div>
+</section>

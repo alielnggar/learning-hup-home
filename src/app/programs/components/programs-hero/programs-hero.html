@@ -1,0 +1,111 @@
+<section
+  class="relative overflow-hidden bg-gradient-to-b from-violet-50 to-white px-4 pt-36 pb-20 md:px-6 lg:h-[704px] lg:pt-[150px] lg:pb-0"
+  dir="rtl"
+>
+  <div
+    class="pointer-events-none absolute left-[-15%] top-[-30%] size-[680px] rounded-full bg-sky-300/50 opacity-50 blur-[50px]"
+  ></div>
+  <div
+    class="pointer-events-none absolute right-[-15%] top-[-20%] size-[620px] rounded-full bg-violet-400/50 opacity-50 blur-[50px]"
+  ></div>
+
+  <div
+    class="relative mx-auto flex max-w-[1000px] flex-col items-center gap-[22px] text-center"
+    data-aos="fade-up"
+  >
+    <div
+      class="inline-flex items-center justify-start gap-1.5 rounded-full bg-violet-100/40 px-2.5 py-1 outline outline-1 outline-offset-[-1px] outline-violet-100"
+    >
+      <span
+        class="text-center text-xs font-normal leading-4 text-purple-600 font-['thmanyah_serif_text']"
+        >+1000 خرّيج تعلّموا معنا</span
+      >
+    </div>
+
+    <h1
+      class="text-[38px] leading-[1.24] font-bold text-navy md:text-[60px] font-['thmanyah_serif_text']"
+    >
+      برامج عملية تطبّقها
+      <br />
+      على مشروعك الحقيقي
+    </h1>
+
+    <p
+      class="max-w-[640px] text-base leading-[1.85] text-neutral-text md:text-[19px] font-['thmanyah_serif_text']"
+    >
+      برامج عملية يقدّمها ممارسون في إدارة المنتجات وتحليل الأعمال والتسليم والتحوّل الرقمي،
+      باختبارات وتطبيقات على مشروعك الحقيقي.
+    </p>
+
+    <form
+      (submit)="onSubmit($event)"
+      class="mt-4 flex w-full flex-col items-start gap-4 rounded-3xl bg-white/95 p-6 shadow-[0_18px_48px_rgba(33,26,82,0.06)]"
+    >
+      <label
+        for="program-search"
+        class="text-right text-[18px] font-bold text-navy font-['thmanyah_serif_text']"
+        >ابحث عن برنامجك</label
+      >
+      <div class="flex w-full flex-col gap-2.5 md:flex-row">
+        <div
+          class="flex h-[52px] flex-1 items-center justify-end gap-2.5 rounded-full border border-violet-100 bg-violet-50 px-4"
+        >
+          <svg
+            class="size-5 shrink-0 text-zinc-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+          <input
+            id="program-search"
+            type="search"
+            [(ngModel)]="searchQuery"
+            name="searchQuery"
+            placeholder="ابحث باسم البرنامج أو المهارة…"
+            class="min-w-0 flex-1 bg-transparent text-right text-[15px] font-normal text-navy outline-none placeholder:text-zinc-400 font-['thmanyah_serif_text']"
+          />
+        </div>
+
+        <div class="relative h-[52px] md:w-[200px]">
+          <select
+            aria-label="المستوى"
+            [(ngModel)]="selectedLevel"
+            name="selectedLevel"
+            class="h-full cursor-pointer w-full appearance-none rounded-full border border-violet-100 bg-violet-50 px-4 text-right text-[15px] font-normal text-slate-700 outline-none font-['thmanyah_serif_text']"
+          >
+            <option value="all">كل المستويات</option>
+            <option value="تمهيدي">تمهيدي</option>
+            <option value="متقدّم">متقدّم</option>
+          </select>
+          <svg
+            class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-gray-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+
+        <button
+          type="submit"
+          class="flex cursor-pointer h-[52px] items-center justify-center gap-2 rounded-full bg-navy px-8 text-base font-semibold leading-4 text-white transition-colors hover:bg-purple-900 font-['IBM_Plex_Sans_Arabic']"
+        >
+          ابحث
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

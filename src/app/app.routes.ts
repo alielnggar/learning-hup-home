@@ -1,31 +1,27 @@
 import { Routes } from '@angular/router';
-import { ProductmangerComponent } from './Product manger career/Product.manger.career.component';
-import { SoftwartDeliveryComponent } from './softwart-delivery/softwart-delivery.component';
-import { SuccessPaymentComponent } from './shared/components/success-payment/success-payment.component';
+import { HomeComponent } from './home/home.component';
+import { ResearchPageComponent } from './ResearchPage/researchpage.component';
+import { ProgramsPageComponent } from './programs/programs-page.component';
 
 export const routes: Routes = [
   {
-    path: 'programs/productmanagement',
-    component: ProductmangerComponent,
-    title: 'Product Manager Career Accelerator',
+    path: 'Home',
+    component: HomeComponent,
+    title: 'Home Page',
   },
   {
-    path: 'programs/softwaredelivery',
-    component: SoftwartDeliveryComponent,
-    title: 'Software Delivery Excellence',
+    path: 'ResearchPageComponent',
+    component: ResearchPageComponent,
+    title: 'Research Page',
   },
-  {
-    path: 'success-payment',
-    component: SuccessPaymentComponent,
-    title: 'تم الدفع بنجاح',
-  },
+  { path: 'programs', component: ProgramsPageComponent, title: 'Programs Page' },
   {
     path: '',
-    redirectTo: 'programs/productmanagement',
+    redirectTo: 'Home',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: 'programs/productmanagement',
+    redirectTo: 'Home',
   },
 ];

@@ -1,28 +1,25 @@
 import { Component, signal, afterNextRender } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import AOS from 'aos';
-// تأكد من استدعاء ملف الـ CSS الخاص بـ AOS هنا (ضروري جداً لعمل الأنيميشن)
-import { HeaderComponent } from './shared/components/header/header.share.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.html',
 })
 export class App {
   protected readonly title = signal('lerning-hub');
 
   constructor() {
-    // afterNextRender يضمن تشغيل الكود في المتصفح فقط وبعد تحميل عناصر الـ DOM
     afterNextRender(() => {
       AOS.init({
-        once: true,      // الأنيميشن يعمل مرة واحدة
-        duration: 800,   // مدة الأنيميشن
-        offset: 100,     // المسافة قبل بدء الأنيميشن
-        easing: 'ease-in-out-cubic', // نعومة الحركة
+        once: true,      
+        duration: 800,   
+        offset: 100,     
+        easing: 'ease-in-out-cubic', 
       });
       
-      // أمر إضافي ينشط AOS في حالة تغير الروتينج
       setTimeout(() => {
         AOS.refresh();
       }, 500);

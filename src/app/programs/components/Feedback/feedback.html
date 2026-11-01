@@ -1,0 +1,129 @@
+<section
+  id="reviews-section"
+  class="flex w-full flex-col items-center justify-start gap-12 overflow-hidden bg-[#FAF9FD] px-4 py-16 md:px-10 lg:px-20 lg:py-24"
+  dir="rtl"
+>
+  <div class="flex flex-col items-center justify-start gap-4 text-center" data-aos="fade-up">
+    <div
+      class="inline-flex items-center justify-start overflow-hidden rounded-full bg-violet-100 px-4 py-1.5 shadow-sm"
+    >
+      <span class="text-xs font-bold text-purple-600">آراء المتدرّبين</span>
+    </div>
+    <h2
+      class="text-3xl font-bold leading-tight text-navy md:text-4xl lg:text-5xl lg:leading-[60px]"
+    >
+      آراء ممّن خاضوا برامجنا
+    </h2>
+  </div>
+
+  <div
+    class="relative flex w-full max-w-[1200px] flex-col items-center justify-center gap-8"
+    data-aos="zoom-in"
+    data-aos-delay="200"
+  >
+    <div
+      class="w-full h-[400px] md:h-[520px] lg:h-[600px] flex items-center justify-center overflow-hidden"
+    >
+      <button
+        (click)="prevSlide()"
+        class="absolute right-1 md:-right-20 z-40 flex size-12 items-center justify-center rounded-full bg-white shadow-lg outline outline-1 -outline-offset-1 outline-neutral-border transition-transform hover:scale-110 md:size-14"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          class="text-navy"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      <button
+        (click)="nextSlide()"
+        class="absolute left-1 md:-left-20 z-40 flex size-12 items-center justify-center rounded-full bg-white shadow-lg outline outline-1 -outline-offset-1 outline-neutral-border transition-transform hover:scale-110 md:size-14"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          class="text-navy"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      @for (item of testimonials(); track item.id; let i = $index) {
+        <div
+          class="absolute inset-0 m-auto flex flex-col overflow-hidden rounded-[24px] w-[220px] h-[340px] md:w-[270px] md:h-[400px] lg:w-[375px] lg:h-[560px] transition-all duration-500 ease-in-out"
+          [ngClass]="getCardClass(i)"
+          (click)="handleCardClick(i)"
+        >
+          <video
+            class="absolute inset-0 h-full w-full object-cover"
+            src="/products-manger-career/feedback-1.mp4.mp4"
+            preload="metadata"
+            playsinline
+          ></video>
+
+          >
+          <div
+            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#17132f]/80 via-transparent to-black/10"
+          ></div>
+
+          <div
+            class="pointer-events-none absolute bottom-4 right-3 z-10 text-right text-white md:bottom-5 md:right-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="3"
+              viewBox="0 0 13 3"
+              fill="none"
+            >
+              <path
+                d="M11.592 0.506389H11.405H10.2832V0.253195C10.2832 0.113284 10.1995 0 10.0962 0C9.99297 0 9.90926 0.113211 9.90926 0.253195V0.506389H0C0.373905 1.01271 1.12177 1.26597 1.68271 1.26597C2.08498 1.26597 7.1029 1.26597 9.90926 1.26597V1.77229C9.90926 1.9122 9.99297 2.02548 10.0962 2.02548H11.592C11.9013 2.02548 12.1529 1.68476 12.1529 1.2659C12.1529 0.847037 11.9013 0.506389 11.592 0.506389ZM11.592 1.5191H10.2832V1.2659C11.1842 1.2659 11.7789 1.2659 11.7789 1.2659L11.7453 1.12963C11.7648 1.1695 11.7789 1.21453 11.7789 1.2659C11.7789 1.40567 11.695 1.5191 11.592 1.5191Z"
+                fill="white"
+              />
+            </svg>
+            <p class="text-xs font-bold md:text-sm">
+              {{ item.name }}
+            </p>
+            <p class="mt-1 text-[10px] md:text-xs">{{ item.location }} · {{ item.experience }}</p>
+          </div>
+
+          <button
+            type="button"
+            aria-label="تشغيل الفيديو"
+            class="absolute left-1/2 top-1/2 z-20 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-lg transition-transform hover:scale-110 md:size-14"
+            (click)="playVideo($event)"
+          >
+            <svg class="ml-0.5 size-5 fill-[#211951]" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </button>
+        </div>
+      }
+    </div>
+
+    <div class="flex items-center justify-center gap-2">
+      @for (dot of [].constructor(totalSlides()); track $index; let i = $index) {
+        <button
+          (click)="goToSlide(i)"
+          class="h-2 rounded-full transition-all duration-300"
+          [ngClass]="
+            i === activeIndex()
+              ? 'w-8 bg-purple-600'
+              : 'w-2 bg-neutral-line hover:bg-neutral-border'
+          "
+          [attr.aria-label]="'انتقل للشريحة ' + (i + 1)"
+        ></button>
+      }
+    </div>
+  </div>
+</section>

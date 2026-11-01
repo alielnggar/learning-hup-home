@@ -1,0 +1,98 @@
+<section class="mt-[60px] bg-[#F7F6FC]" dir="rtl">
+  <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-4 py-[110px] md:px-20">
+    <div
+      class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-center"
+      data-aos="fade-up"
+    >
+      <div class="flex flex-col items-center gap-3.5">
+        <h2 class="text-[32px] leading-[1.28] font-bold md:text-[44px]">
+          <span class="text-navy">من سؤالٍ في المشروع إلى أداةٍ تستخدمها </span>
+        </h2>
+        <p class="max-w-[560px] text-[17px] leading-[1.8] text-[#4a4566]">
+          لا نبدأ من موضوعٍ نظري. نبدأ من سؤالٍ يتكرّر في المشاريع، وننتهي بمخرجٍ يمكن تطبيقه.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-2 lg:flex lg:items-center">
+      @for (s of steps; track s.n; let i = $index) {
+        <div
+          class="group flex flex-col items-start rounded-[26px] border border-neutral-line bg-white px-[26px] py-7 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] hover:border-transparent hover:bg-navy hover:shadow-2xl lg:min-h-[340px] lg:flex-1"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="(i + 1) * 100"
+        >
+          <div class="flex w-full items-center justify-between">
+            <span
+              class="text-[15px] font-bold text-purple-600 transition-colors duration-300 group-hover:text-violet-200"
+            >
+              {{ s.n }}
+            </span>
+            <div
+              class="size-[22px] text-purple-600 transition-colors duration-300 group-hover:text-white"
+              [innerHTML]="s.icon"
+            >
+              
+            </div>
+          </div>
+          <h3
+            class="mt-[26px] text-[22px] font-bold text-navy transition-colors duration-300 group-hover:text-white"
+          >
+            {{ s.title }}
+          </h3>
+          <p
+            class="text-[15px] leading-[1.8] text-[#4a4566] transition-colors duration-300 group-hover:text-white/75"
+          >
+            {{ s.body }}
+          </p>
+          
+        </div>
+      }
+
+      <div
+        class="group flex flex-col items-start rounded-[26px] border border-neutral-line bg-white px-[26px] py-7 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] hover:border-transparent hover:bg-navy hover:shadow-2xl lg:min-h-[340px] lg:flex-1"
+        data-aos="fade-up"
+        data-aos-delay="0"
+      >
+        <div class="flex w-full items-center justify-between">
+          <span
+            class="text-[15px] font-bold text-purple-600 transition-colors duration-300 group-hover:text-violet-200"
+          >
+            04
+          </span>
+          <svg
+            class="size-[22px] text-purple-600 transition-colors duration-300 group-hover:text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+            />
+          </svg>
+        </div>
+        <h3
+          class="mt-[26px] text-[22px] font-bold text-navy transition-colors duration-300 group-hover:text-white"
+        >
+          مخرجاتٌ للتطبيق
+        </h3>
+        <p
+          class="text-[15px] leading-[1.8] text-[#4a4566] transition-colors duration-300 group-hover:text-white/75"
+        >
+          لا ينتهي البحث بورقة. يتحوّل إلى ما تستخدمه في عملك:
+        </p>
+        <ul class="mt-2 flex flex-wrap gap-2">
+          @for (o of outputs; track o) {
+            <li
+              class="rounded-full border border-neutral-line bg-white px-3 py-1.5 text-[13px] text-navy transition-colors duration-300 group-hover:border-white/25 group-hover:bg-white/10 group-hover:text-white"
+            >
+              {{ o }}
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

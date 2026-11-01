@@ -1,0 +1,56 @@
+<section class="mx-auto max-w-[1200px] px-4 py-[76px] md:px-6 xl:px-0" dir="rtl" data-aos="fade-up">
+  <div class="relative isolate overflow-hidden rounded-[40px] bg-[#f4f2fb] px-6 pt-20 pb-16 md:px-20 md:pt-24 md:pb-[88px]">
+    
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute top-0 left-1/2 h-full w-[1200px] -translate-x-1/2">
+        <img src="/figma/blob-violet.svg" alt="" class="drift-a absolute top-[-360px] left-[580px] h-[800px] w-[940px] max-w-none" />
+        <img src="/figma/blob-sky.svg" alt="" class="drift-b absolute top-[170px] left-[-320px] h-[760px] w-[880px] max-w-none" />
+        <img src="/figma/blob-purple.svg" alt="" class="drift-c absolute top-[-340px] left-[120px] h-[660px] w-[780px] max-w-none" />
+        
+        @for (p of panes; track p.left) {
+          <div class="absolute flex h-[445px] w-[200px] items-center justify-center" [style.left.px]="p.left" [style.top.px]="p.top">
+            <div class="-rotate-18 -skew-x-18 scale-y-95">
+              <div class="h-[380px] w-[210px] border border-white/60 bg-gradient-to-b from-white/55 to-white/5" [style.opacity]="p.opacity"></div>
+            </div>
+          </div>
+        }
+      </div>
+      <div class="animate-gradient absolute inset-0 bg-[linear-gradient(110deg,transparent_30%,rgba(255,255,255,0.35)_50%,transparent_70%)] bg-[length:250%_100%]"></div>
+    </div>
+
+    <div aria-hidden="true" class="absolute inset-0 hidden xl:block">
+      @for (f of floats; track f.title) {
+        <div class="absolute" [class]="f.pos">
+          <div class="flex items-center gap-2.5 rounded-[18px] border border-white/95 bg-white/75 py-2.5 pr-4 pl-3 shadow-[0_14px_34px_rgba(33,25,81,0.08)] backdrop-blur-[7px]" [class]="f.drift">
+            <span class="flex size-[34px] items-center justify-center rounded-[10px]" [class]="f.ground">
+              <img [src]="'/figma/' + f.icon + '.svg'" alt="" [style.width.px]="f.iconSize" [style.height.px]="f.iconSize" />
+            </span>
+            <span class="flex flex-col items-start gap-px whitespace-nowrap">
+              <span class="text-sm font-bold text-navy">{{ f.title }}</span>
+              <span class="text-[11.5px] font-medium text-neutral-arrow">{{ f.sub }}</span>
+            </span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="relative flex flex-col items-center text-center">
+      <span class="mb-[22px] rounded-full border border-white/95 bg-white/65 px-3.5 py-1.5 text-[13.5px] font-medium text-purple">
+        انضمّ إلى الـHub
+      </span>
+      <h2 class="mb-5 text-[34px] leading-[1.25] font-bold text-navy sm:text-[46px] lg:text-[60px]">
+        لا تبدأ من الصفر.<br />
+        تعلّم من <span class="text-purple">خبرة من صنعوا المنتجات.</span>
+      </h2>
+      <p class="mb-9 max-w-[640px] text-[17px] leading-[1.85] text-neutral-text md:text-[19px]">
+        برامج، وأبحاث، وأدوات، ومجلة، من خبرة ممارسين عملوا على منتجاتٍ رقمية حقيقية. كل ذلك في مكانٍ واحد، بانتظارك.
+      </p>
+      <a href="#" class="group/cta relative inline-flex h-14 items-center gap-2 overflow-hidden rounded-full bg-navy px-[30px] text-base font-bold text-white shadow-[0_14px_30px_rgba(33,25,81,0.22)] transition-[transform,box-shadow] duration-300 ease-soft hover:-translate-y-0.5 hover:shadow-[0_20px_40px_rgba(33,25,81,0.32)] active:scale-[0.98]">
+        <span class="absolute inset-0 bg-[linear-gradient(110deg,#211951_0%,#746dc6_50%,#211951_100%)] bg-[length:200%_100%] opacity-0 transition-opacity duration-500 group-hover/cta:opacity-100 group-hover/cta:[animation:gradient-pan_3s_ease-in-out_infinite]"></span>
+        <span class="relative">اشترك الآن وابدأ رحلتك</span>
+        <span class="relative transition-transform duration-300 ease-soft group-hover/cta:-translate-x-1">←</span>
+      </a>
+    </div>
+    
+  </div>
+</section>

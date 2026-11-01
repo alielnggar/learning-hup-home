@@ -1,0 +1,17 @@
+<main class=" bg-white ">
+  <app-research-hero (search)="handleSearch($event)" (openPaywall)="handleOpenPaywall($event)">
+  </app-research-hero>
+
+  <app-research-featured
+    (openPaywall)="handleOpenPaywall({ kind: 'ورقة بحثية', title: 'مؤشرات نجاح المنتجات' })"
+  >
+  </app-research-featured>
+
+  <app-research-areas (domainSelected)="handleDomainSelect($event)"> </app-research-areas>
+  <app-archive></app-archive>
+  <app-process-band></app-process-band>
+  <app-lab></app-lab>
+  <app-team></app-team>
+  <app-research-cta></app-research-cta>
+  <app-footer></app-footer>
+</main>
